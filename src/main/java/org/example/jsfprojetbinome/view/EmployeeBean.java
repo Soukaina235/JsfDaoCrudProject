@@ -40,6 +40,7 @@ public class EmployeeBean {
         savechangesbutton.setDisabled(true);
         anyEmployeeEditable = true;
         showNewEmployeeRow = false;
+        addbutton.setDisabled(false);
 
         emails = new HashMap<>();
 
@@ -191,6 +192,7 @@ public class EmployeeBean {
             employees.add(employee);
             employee = new Employee();
             showNewEmployeeRow = false;
+            addbutton.setDisabled(false);
         }
 
         emails = new HashMap<>();
@@ -202,10 +204,12 @@ public class EmployeeBean {
 
     //PAGINATION
     public void loadEmployees() {
+        List<Employee> copiedEmployees = new ArrayList<>(employees);
         int startIndex = (currentPage - 1) * pageSize;
-        int endIndex = Math.min(startIndex + pageSize, employees.size());
-        displayedEmployees = employees.subList(startIndex, endIndex);
+        int endIndex = Math.min(startIndex + pageSize, copiedEmployees.size());
+        displayedEmployees = copiedEmployees.subList(startIndex, endIndex);
     }
+
 
     public void nextPage() {
         if (hasNextPage()) {

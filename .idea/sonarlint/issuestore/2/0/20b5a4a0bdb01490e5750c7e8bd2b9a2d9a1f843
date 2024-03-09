@@ -9,20 +9,20 @@ java:S1192o"LDefine a constant instead of duplicating this literal "departement
 java:S1192n"FDefine a constant instead of duplicating this literal "email" 3 times.(úÁÞ°
 _
 java:S1192m"IDefine a constant instead of duplicating this literal "lastname" 3 times.( â¢½
-j
-java:S2095."OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ƒ»ÊÞûÿÿÿÿ
 k
 java:S2095Â"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ƒ»ÊÞûÿÿÿÿ
-f
-java:S2095â"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ø·“ÿ
-j
-java:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ƒ»ÊÞûÿÿÿÿ
-e
-java:S2095g"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ø·“ÿ
 k
 java:S2095¤"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ƒ»ÊÞûÿÿÿÿ
+j
+java:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ƒ»ÊÞûÿÿÿÿ
+l
+java:S2095g"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ø·“ÿ8•È‚Ÿâ1
 f
 java:S2095…"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ø·“ÿ
-]	java:S125?"<This block of commented-out lines of code should be removed.(ÆÿíØûÿÿÿÿ8Ñ¹õ›â1
+j
+java:S2095."OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ƒ»ÊÞûÿÿÿÿ
+m
+java:S2095â"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ø·“ÿ8Ë¤‡Ÿâ1
+]	java:S125?"<This block of commented-out lines of code should be removed.(ÆÿíØûÿÿÿÿ8™¦‡Ÿâ1
 >
 java:S1481¿"'Remove this unused "id" local variable.(Ò¯±î
