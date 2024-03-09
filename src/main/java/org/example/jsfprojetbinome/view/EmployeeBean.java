@@ -23,11 +23,12 @@ public class EmployeeBean {
     private HtmlCommandButton savechangesbutton;
     private boolean anyEmployeeEditable;
     private Map<Integer, String> emails;
+
     private Employee employee;
     private boolean showNewEmployeeRow;
     private List<Employee> displayedEmployees;
-    private int currentPage = 1;
-    private int pageSize = 6;
+    private int currentPage;
+    private int pageSize;
 
     public EmployeeBean(){
         employeeService = new EmployeeService();
@@ -48,6 +49,10 @@ public class EmployeeBean {
         for (Employee employee : employees) {
             employee.setEditable(false);
         }
+
+        currentPage = 1;
+        pageSize = 6;
+        loadEmployees();
     }
     
     public List<Employee> getDisplayedEmployees() {
