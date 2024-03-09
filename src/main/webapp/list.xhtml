@@ -8,6 +8,45 @@
 
 <h:head>
     <h:outputStylesheet  library="webjars" name="bootstrap/5.3.2/css/bootstrap.css"/>
+    <script type="text/javascript">
+        function addRow() {
+            var table = document.getElementById("x:employeeTable");
+            var rowCount = table.rows.length;
+            var row = table.insertRow(rowCount);
+
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+            var cell4 = row.insertCell(3);
+
+            var input1 = document.createElement('input');
+            input1.setAttribute('type', 'text');
+            input1.setAttribute('name', 'employeeBean.employee.firstname');
+            input1.setAttribute('jsfc', 'h:inputText');
+            cell1.appendChild(input1);
+
+            var input2 = document.createElement('input');
+            input2.setAttribute('type', 'text');
+            input2.setAttribute('name', 'employeeBean.employee.lastname');
+            input2.setAttribute('jsfc', 'h:inputText');
+            cell2.appendChild(input2);
+
+            var input3 = document.createElement('input');
+            input3.setAttribute('type', 'text');
+            input3.setAttribute('name', 'employeeBean.employee.email');
+            input3.setAttribute('jsfc', 'h:inputText');
+            cell3.appendChild(input3);
+
+            var input4 = document.createElement('input');
+            input4.setAttribute('type', 'text');
+            input4.setAttribute('name', 'employeeBean.employee.departement');
+            input4.setAttribute('jsfc', 'h:inputText');
+            cell4.appendChild(input4);
+
+            document.getElementById("x:saveChangesButtonId").disabled = false;
+            document.getElementById("x:addbutton").disabled = true;
+        }
+    </script>
 </h:head>
 
 <h:body>
@@ -15,27 +54,27 @@
     <br/><br/>
     <hr/><br/>
     <h:messages globalOnly="true"/>
-    <h:form>
-        <h:dataTable id="employeeTable" var="employeeDTO" value="#{employeeBean.employees}" styleClass="table table-striped">
+    <h:form id="x">
+        <h:dataTable id="employeeTable" var="employee" value="#{employeeBean.employees}" styleClass="table table-striped">
             <h:column>
                 <f:facet name="header">#{message.fname}</f:facet>
-                <h:inputText value="#{employeeDTO.firstname}" rendered="#{employeeDTO.editable}" />
-                <h:outputText value="#{employeeDTO.firstname}" rendered="#{not employeeDTO.editable}" />
+                <h:inputText value="#{employee.firstname}" rendered="#{employee.editable}" />
+                <h:outputText value="#{employee.firstname}" rendered="#{not employeeemployee.editable}" />
             </h:column>
             <h:column>
                 <f:facet name="header">#{message.lname}</f:facet>
-                <h:inputText value="#{employeeDTO.lastname}" rendered="#{employeeDTO.editable}" />
-                <h:outputText value="#{employeeDTO.lastname}" rendered="#{not employeeDTO.editable}" />
+                <h:inputText value="#{employee.lastname}" rendered="#{employee.editable}" />
+                <h:outputText value="#{employee.lastname}" rendered="#{not employee.editable}" />
             </h:column>
             <h:column>
                 <f:facet name="header">#{message.email}</f:facet>
-                <h:inputText value="#{employeeDTO.email}" rendered="#{employeeDTO.editable}" />
-                <h:outputText value="#{employeeDTO.email}" rendered="#{not employeeDTO.editable}" />
+                <h:inputText value="#{employee.email}" rendered="#{employee.editable}" />
+                <h:outputText value="#{employee.email}" rendered="#{not employee.editable}" />
             </h:column>
             <h:column>
                 <f:facet name="header">#{message.departement}</f:facet>
-                <h:inputText value="#{employeeDTO.departement}" rendered="#{employeeDTO.editable}" />
-                <h:outputText value="#{employeeDTO.departement}" rendered="#{not employeeDTO.editable}" />
+                <h:inputText value="#{employee.departement}" rendered="#{employee.editable}" />
+                <h:outputText value="#{employee.departement}" rendered="#{not employee.editable}" />
             </h:column>
             <!--            <h:column>-->
             <!--                <f:facet name="header">#{message.birthdate}</f:facet>-->
@@ -46,16 +85,16 @@
             <!--            </h:column>-->
             <h:column>
                 <f:facet name="header">#{message.actions}</f:facet>
-                <h:commandButton value="#{message.edit}" action="#{employeeBean.edit(employeeDTO)}"
-                                 class="btn btn-primary" rendered="#{not employeeDTO.editable}" />
-                <h:commandButton value="#{message.delete}" action="#{employeeBean.delete(employeeDTO)}"
-                                 class="btn btn-danger" rendered="#{not employeeDTO.editable}" />
+                <h:commandButton value="#{message.edit}" action="#{employeeBean.edit(employee)}"  type="submit"
+                                 class="btn btn-primary" rendered="#{not employee.editable}" />
+                <h:commandButton value="#{message.delete}" action="#{employeeBean.delete(employee)}" type="submit"
+                                 class="btn btn-danger" rendered="#{not employee.editable}" />
             </h:column>
         </h:dataTable>
         <br/>
-        <h:commandButton  type="button" value="#{message.add}" class="btn btn-primary"  binding="#{employeeBean.addbutton}"/>
+        <h:commandButton  type="button" value="#{message.add}" id="addbutton" class="btn btn-primary"  binding="#{employeeBean.addbutton}" onclick="addRow()"/>
         <br/><br/>
-        <h:commandButton type="submit" value="#{message.savechanges}" action="#{employeeBean.saveChanges()}"
+        <h:commandButton type="submit" id="saveChangesButtonId" value="#{message.savechanges}" action="#{employeeBean.saveChanges()}"
                          class="btn btn-primary"  rendered="#{employeeBean.anyEmployeeEditable}"
                          binding="#{employeeBean.savechangesbutton}"/>
 
