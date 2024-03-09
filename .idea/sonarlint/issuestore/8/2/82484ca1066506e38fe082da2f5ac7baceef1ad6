@@ -1,0 +1,12 @@
+
+N
+java:S1874"3Remove this use of "ManagedBean"; it is deprecated.(Ü½‰êûÿÿÿÿ
+P
+java:S1874"5Remove this use of "SessionScoped"; it is deprecated.(¢ÈŸ×øÿÿÿÿ
+X
+java:S1117+"<Rename "employee" which hides the field declared at line 26.(ÃÎìg8Îú¸™â1
+A	java:S106…"+Replace this use of System.out by a logger.(¼¡¨ò
+W	java:S125Ž"<This block of commented-out lines of code should be removed.(ÙÌªûÿÿÿÿ
+Y
+java:S1117˜"<Rename "employee" which hides the field declared at line 26.(ÃÎìg8Øú¸™â1
+^	java:S125¨"<This block of commented-out lines of code should be removed.(”¡úÿÿÿÿ8ûàÁ™â1

@@ -3,6 +3,7 @@ package org.example.jsfprojetbinome.view;
 import jakarta.faces.bean.ManagedBean;
 import jakarta.faces.bean.SessionScoped;
 import jakarta.faces.component.html.HtmlCommandButton;
+import org.example.jsfprojetbinome.model.Departement;
 import org.example.jsfprojetbinome.model.Employee;
 import org.example.jsfprojetbinome.service.EmployeeService;
 
@@ -22,10 +23,12 @@ public class EmployeeBean {
     private HtmlCommandButton savechangesbutton;
     private boolean anyEmployeeEditable;
     private Map<Integer, String> emails;
+    private Employee employee;
 
 
     public EmployeeBean(){
         employeeService = new EmployeeService();
+        employee = new Employee();
         employees = employeeService.findAllService();
         deletebutton = new HtmlCommandButton();
         addbutton = new HtmlCommandButton();
@@ -72,6 +75,22 @@ public class EmployeeBean {
 
     public void setSavechangesbutton(HtmlCommandButton savechangesbutton) {
         this.savechangesbutton = savechangesbutton;
+    }
+
+    public Map<Integer, String> getEmails() {
+        return emails;
+    }
+
+    public void setEmails(Map<Integer, String> emails) {
+        this.emails = emails;
+    }
+
+    public Employee getEmployee() {
+        return employee;
+    }
+
+    public void setEmployee(Employee employee) {
+        this.employee = employee;
     }
 
     public List<Employee> getEmployees() {
@@ -144,5 +163,17 @@ public class EmployeeBean {
         savechangesbutton.setRendered(true);
         savechangesbutton.setDisabled(true);
     }
+
+
+//    public void saveChanges() {
+//        String firstname = employee.getFirstname();
+//        String lastname = employee.getLastname();
+//        String email = employee.getEmail();
+//        Departement departementName = employee.getDepartement();
+//
+//        employeeService.saveService(employee);
+//        employees = employeeService.findAllService(); // Met à jour la liste des employés
+//        savechangesbutton.setDisabled(true);
+//    }
 
 }
