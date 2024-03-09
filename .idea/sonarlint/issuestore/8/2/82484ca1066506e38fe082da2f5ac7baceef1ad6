@@ -4,10 +4,10 @@ java:S1874"3Remove this use of "ManagedBean"; it is deprecated.(Ü½‰êûÿÿÿÿ8ü¡‡
 W
 java:S1874"5Remove this use of "SessionScoped"; it is deprecated.(¢ÈŸ×øÿÿÿÿ8ü¡‡Ÿâ1
 X
-java:S11170"<Rename "employee" which hides the field declared at line 26.(ÃÎìg8€¢‡Ÿâ1
-H	java:S106ª"+Replace this use of System.out by a logger.(¼¡¨ò8‡¢‡Ÿâ1
+java:S11171"<Rename "employee" which hides the field declared at line 27.(ÃÎìg8Äõº â1
+H	java:S106¯"+Replace this use of System.out by a logger.(¼¡¨ò8Üõº â1
 Y
-java:S1117·"<Rename "employee" which hides the field declared at line 26.(ÃÎìg8ˆ¢‡Ÿâ1
-^	java:S125ð"<This block of commented-out lines of code should be removed.(”¡úÿÿÿÿ8¢‡Ÿâ1
+java:S1117¼"<Rename "employee" which hides the field declared at line 27.(ÃÎìg8áõº â1
+^	java:S125õ"<This block of commented-out lines of code should be removed.(”¡úÿÿÿÿ8¢‡Ÿâ1
 g
 java:S1128"JRemove this unused import 'org.example.jsfprojetbinome.model.Departement'.(Ÿƒ½8Ž¢‡Ÿâ1

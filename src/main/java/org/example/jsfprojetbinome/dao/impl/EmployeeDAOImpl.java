@@ -33,22 +33,24 @@ public class EmployeeDAOImpl implements EmployeeDAO {
         return result;
     }
 
-
     public int save(Employee employee) {
         ConnectDB db = new ConnectDB();
         Connection connection = db.getConnection();
-        String sql = "INSERT INTO employee (firstname,lastname, email,departement) VALUES(?, ?, ?, ?)";
+        String sql = "INSERT INTO employee (firstname,lastname, email,departement,  birthdate) VALUES(?, ?, ?, ?, ?)";
 
+        java.util.Date utilDate = employee.getBirthdate();
+        java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
         int result = 0;
 
         try {
 
             PreparedStatement statement = connection.prepareStatement(sql);
 
-            statement.setString(1, employee.getEmail());
-            statement.setString(2, employee.getFirstname());
-            statement.setString(3, employee.getLastname());
+            statement.setString(1, employee.getFirstname());
+            statement.setString(2, employee.getLastname());
+            statement.setString(3, employee.getEmail());
             statement.setString(4, employee.getDepartement().name());
+            statement.setDate(5, sqlDate);
 
             result = statement.executeUpdate();
 
@@ -59,36 +61,6 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 
         return result;
     }
-
-//    public int save(Employee employee) {
-//        ConnectDB db = new ConnectDB();
-//        Connection connection = db.getConnection();
-//        String sql = "INSERT INTO employee (firstname,lastname, email,departement,  birthdate) VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
-//
-//        java.util.Date utilDate = employee.getBirthdate();
-//        java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
-//        int result = 0;
-//
-//        try {
-//
-//            PreparedStatement statement = connection.prepareStatement(sql);
-//
-//            statement.setString(1, employee.getEmail());
-//            statement.setString(2, employee.getFirstname());
-//            statement.setString(3, employee.getLastname());
-//            statement.setString(4, employee.getEmail());
-//            statement.setString(5, employee.getDepartement().name());
-//            statement.setDate(6, sqlDate);
-//
-//            result = statement.executeUpdate();
-//
-//        } catch(SQLException e) {
-//            e.printStackTrace();
-//        }
-//        db.closeConnection();
-//
-//        return result;
-//    }
 
     public Employee findById(int id){
         ConnectDB db = new ConnectDB();

@@ -15,3 +15,9 @@ w
 Gsrc/main/java/org/example/jsfprojetbinome/dao/impl/EmployeeDAOImpl.java,2\0\20b5a4a0bdb01490e5750c7e8bd2b9a2d9a1f843
 m
 =src/main/java/org/example/jsfprojetbinome/util/ConnectDB.java,1\b\1b5bc97af594dbe1d22041ed2a42f6a2ee15db14
+T
+$src/main/webapp/resources/styles.css,b\b\bbe31e1aba65c304029e440415af2f0cb81e2742
+X
+(src/main/webapp/resources/css/styles.css,4\2\427775e2015b413542fec34801ef44d8d4e22b2c
+v
+Fsrc/main/java/org/example/jsfprojetbinome/service/EmployeeService.java,4\c\4c07d481db24438d2560311eeeecdd980be4b09c
