@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config version="3.0" xmlns="https://jakarta.ee/xml/ns/jakartaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee
+                                  https://jakarta.ee/xml/ns/jakartaee/web-facesconfig_3_0.xsd">
+
+    <managed-bean> <!-- L'élément racine pour déclarer un bean géré dans JSF -->
+        <managed-bean-name>employee</managed-bean-name> <!-- Nom du bean : utilisé pour référencer le bean dans le code JAva et les pages JSF -->
+        <managed-bean-class>org.example.jsfprojetbinome.model.Employee</managed-bean-class> <!-- La classe qui implémente le bean géré -->
+        <managed-bean-scope>session</managed-bean-scope> <!-- La portée du bean géré: la durée de vie du bean dans l'application -->
+    </managed-bean>
+
+    <application>
+        <locale-config>
+            <default-locale>fr</default-locale>
+            <supported-locale>en</supported-locale>
+            <supported-locale>fr</supported-locale>
+        </locale-config>
+
+        <resource-bundle>
+            <base-name>i18n.labels</base-name>
+            <var>message</var>
+        </resource-bundle>
+    </application>
+
+    <converter>
+        <converter-id>customDateConverter</converter-id>
+        <converter-class>org.example.jsfprojetbinome.CustomDateConverter</converter-class>
+    </converter>
+
+</faces-config>

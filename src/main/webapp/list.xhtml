@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+    <h:outputStylesheet  library="webjars" name="bootstrap/5.3.2/css/bootstrap.css"/>
+</h:head>
+
+<h:body>
+    <h:outputText class="h1" value="#{message.title}"/>
+    <br/><br/>
+    <hr/><br/>
+    <h:messages globalOnly="true"/>
+    <h:form>
+        <h:dataTable id="employeeTable" var="employeeDTO" value="#{employeeBean.employees}" styleClass="table table-striped">
+            <h:column>
+                <f:facet name="header">#{message.fname}</f:facet>
+                <h:inputText value="#{employeeDTO.firstname}" rendered="#{employeeDTO.editable}" />
+                <h:outputText value="#{employeeDTO.firstname}" rendered="#{not employeeDTO.editable}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">#{message.lname}</f:facet>
+                <h:inputText value="#{employeeDTO.lastname}" rendered="#{employeeDTO.editable}" />
+                <h:outputText value="#{employeeDTO.lastname}" rendered="#{not employeeDTO.editable}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">#{message.email}</f:facet>
+                <h:inputText value="#{employeeDTO.email}" rendered="#{employeeDTO.editable}" />
+                <h:outputText value="#{employeeDTO.email}" rendered="#{not employeeDTO.editable}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">#{message.departement}</f:facet>
+                <h:inputText value="#{employeeDTO.departement}" rendered="#{employeeDTO.editable}" />
+                <h:outputText value="#{employeeDTO.departement}" rendered="#{not employeeDTO.editable}" />
+            </h:column>
+            <!--            <h:column>-->
+            <!--                <f:facet name="header">#{message.birthdate}</f:facet>-->
+            <!--                <h:inputText value="#{employeeDTO.birthdate}" rendered="#{employeeDTO.editable}" converterId="customDateConverter">
+            <f:convertDateTime pattern="yyyy-MM-dd" />
+            </>-->
+            <!--                <h:outputText value="#{employeeDTO.birthdate}" rendered="#{not employeeDTO.editable}" />-->
+            <!--            </h:column>-->
+            <h:column>
+                <f:facet name="header">#{message.actions}</f:facet>
+                <h:commandButton value="#{message.edit}" action="#{employeeBean.edit(employeeDTO)}"
+                                 class="btn btn-primary" rendered="#{not employeeDTO.editable}" />
+                <h:commandButton value="#{message.delete}" action="#{employeeBean.delete(employeeDTO)}"
+                                 class="btn btn-danger" rendered="#{not employeeDTO.editable}" />
+            </h:column>
+        </h:dataTable>
+        <br/>
+        <h:commandButton  type="button" value="#{message.add}" class="btn btn-primary"  binding="#{employeeBean.addbutton}"/>
+        <br/><br/>
+        <h:commandButton type="submit" value="#{message.savechanges}" action="#{employeeBean.saveChanges()}"
+                         class="btn btn-primary"  rendered="#{employeeBean.anyEmployeeEditable}"
+                         binding="#{employeeBean.savechangesbutton}"/>
+
+
+    </h:form>
+
+
+    <h:outputStylesheet library="webjars" value="bootstrap/5.3.3/js/bootstrap.js"/>
+</h:body>
+</html>
