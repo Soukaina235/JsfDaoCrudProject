@@ -23,9 +23,8 @@
         </resource-bundle>
     </application>
 
-    <converter>
+    <!--<converter>
         <converter-id>customDateConverter</converter-id>
         <converter-class>org.example.jsfprojetbinome.CustomDateConverter</converter-class>
-    </converter>
-
+    </converter>-->
 </faces-config>

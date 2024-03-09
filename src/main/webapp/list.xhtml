@@ -5,7 +5,7 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
-      xmlns:p="http://primefaces.org/ui">
+>
 
 <h:head>
     <h:outputStylesheet  library="webjars" name="bootstrap/5.3.2/css/bootstrap.css"/>
@@ -21,7 +21,7 @@
             <h:column>
                 <f:facet name="header">#{message.fname}</f:facet>
                 <h:inputText value="#{employee.firstname}" rendered="#{employee.editable}" />
-                <h:outputText value="#{employee.firstname}" rendered="#{not employeeemployee.editable}" />
+                <h:outputText value="#{employee.firstname}" rendered="#{not employee.editable}" />
             </h:column>
             <h:column>
                 <f:facet name="header">#{message.lname}</f:facet>
@@ -61,9 +61,18 @@
         </h:panelGrid>
         <br/>
 
-        <h:commandButton value="Previous" action="#{employeeBean.previousPage()}" rendered="#{employeeBean.hasPreviousPage()}" />
-        <h:outputText value=" Page #{employeeBean.currentPage} of #{employeeBean.getTotalPages()} " />
-        <h:commandButton value="Next" action="#{employeeBean.nextPage()}" rendered="#{employeeBean.hasNextPage()}" />
+
+        <ul class="pagination">
+            <li class="page-item active">
+                <h:commandButton value="Previous" class="page-link" action="#{employeeBean.previousPage()}" rendered="#{employeeBean.hasPreviousPage()}" />
+            </li>
+            <li class="page-item btn-light">
+                <h:outputText class="page-link" value=" Page #{employeeBean.currentPage} of #{employeeBean.getTotalPages()} " />
+            </li>
+            <li class="page-item active">
+                <h:commandButton value="Next" class="page-link" action="#{employeeBean.nextPage()}" rendered="#{employeeBean.hasNextPage()}" />
+            </li>
+        </ul>
 
         <br/><br/>
 
