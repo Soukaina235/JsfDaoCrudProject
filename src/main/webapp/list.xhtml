@@ -5,92 +5,93 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
->
 
 
 <h:head>
     <h:outputStylesheet  library="webjars" name="bootstrap/5.3.2/css/bootstrap.css"/>
+    <h:outputStylesheet library="css" name="style.css" />
 </h:head>
 
 <h:body>
-    <h:outputText class="h1" value="#{message.title}"/>
-    <br/><br/>
-    <hr/><br/>
-    <h:messages globalOnly="true"/>
-    <h:form id="employeeForm">
-        <h:dataTable id="employeeTable" var="employee" value="#{employeeBean.displayedEmployees}"  styleClass="table table-striped">
-            <h:column>
-                <f:facet name="header">#{message.fname}</f:facet>
-                <h:inputText value="#{employee.firstname}" rendered="#{employee.editable}" />
-                <h:outputText value="#{employee.firstname}" rendered="#{not employee.editable}" />
-            </h:column>
-            <h:column>
-                <f:facet name="header">#{message.lname}</f:facet>
-                <h:inputText value="#{employee.lastname}" rendered="#{employee.editable}" />
-                <h:outputText value="#{employee.lastname}" rendered="#{not employee.editable}" />
-            </h:column>
-            <h:column>
-                <f:facet name="header">#{message.email}</f:facet>
-                <h:inputText value="#{employee.email}" rendered="#{employee.editable}" />
-                <h:outputText value="#{employee.email}" rendered="#{not employee.editable}" />
-            </h:column>
-            <h:column>
-                <f:facet name="header">#{message.departement}</f:facet>
-                <h:inputText value="#{employee.departement}" rendered="#{employee.editable}" />
-                <h:outputText value="#{employee.departement}" rendered="#{not employee.editable}" />
-            </h:column>
-             <h:column>
-                 <f:facet name="header">#{message.birthdate}</f:facet>
-                <h:inputText value="#{employee.birthdate}" rendered="#{employee.editable}" converterId="customDateConverter">
-                    <f:convertDateTime pattern="yyyy-MM-dd" />
-                </h:inputText>
-                <h:outputText value="#{employeeDTO.birthdate}" rendered="#{not employeeDTO.editable}" />
-            </h:column>
-            <h:column>
-                <f:facet name="header">#{message.actions}</f:facet>
-                <h:commandButton value="#{message.edit}" action="#{employeeBean.edit(employee)}"  type="submit"
-                                 class="btn btn-primary" rendered="#{not employee.editable}" />
-                <h:commandButton value="#{message.delete}" action="#{employeeBean.delete(employee)}" type="submit"
-                                 class="btn btn-danger" rendered="#{not employee.editable}" />
-            </h:column>
-        </h:dataTable>
-        <h:panelGrid columns="4"  rendered="#{employeeBean.showNewEmployeeRow}">
-            <h:inputText value="#{employeeBean.employee.firstname}" class="me-3"/>
-            <h:inputText value="#{employeeBean.employee.lastname}" class="me-3" />
-            <h:inputText value="#{employeeBean.employee.email}" class="me-3"/>
-            <h:inputText value="#{employeeBean.employee.departement}" class="me-3"/>
-        </h:panelGrid>
-        <br/>
+    <div class="body">
 
-
-        <ul class="pagination">
-            <li class="page-item active">
-                <h:commandButton value="Previous" class="page-link" action="#{employeeBean.previousPage()}" rendered="#{employeeBean.hasPreviousPage()}" />
-            </li>
-            <li class="page-item btn-light">
-                <h:outputText class="page-link" value=" Page #{employeeBean.currentPage} of #{employeeBean.getTotalPages()} " />
-            </li>
-            <li class="page-item active">
-                <h:commandButton value="Next" class="page-link" action="#{employeeBean.nextPage()}" rendered="#{employeeBean.hasNextPage()}" />
-            </li>
-        </ul>
-
+        <h:outputText class="h1" value="#{message.title}"/>
         <br/><br/>
+        <hr/><br/>
+        <h:messages  globalOnly="true"/>
+        <h:form id="employeeForm">
+            <h:dataTable id="employeeTable" var="employee" value="#{employeeBean.displayedEmployees}"  styleClass="table table-striped">
+                <h:column>
+                    <f:facet name="header">#{message.fname}</f:facet>
+                    <h:inputText value="#{employee.firstname}" rendered="#{employee.editable}" />
+                    <h:outputText value="#{employee.firstname}" rendered="#{not employee.editable}" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header">#{message.lname}</f:facet>
+                    <h:inputText value="#{employee.lastname}" rendered="#{employee.editable}" />
+                    <h:outputText value="#{employee.lastname}" rendered="#{not employee.editable}" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header">#{message.email}</f:facet>
+                    <h:inputText value="#{employee.email}" rendered="#{employee.editable}" />
+                    <h:outputText value="#{employee.email}" rendered="#{not employee.editable}" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header">#{message.departement}</f:facet>
+                    <h:inputText value="#{employee.departement}" rendered="#{employee.editable}" />
+                    <h:outputText value="#{employee.departement}" rendered="#{not employee.editable}" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header">#{message.birthdate}</f:facet>
+                    <h:inputText value="#{employee.birthdate}" rendered="#{employee.editable}" converterId="customDateConverter">
+                        <f:convertDateTime pattern="yyyy-MM-dd" />
+                    </h:inputText>
+                    <h:outputText value="#{employee.birthdate}" rendered="#{not employee.editable}" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header">#{message.actions}</f:facet>
+                    <h:commandButton value="#{message.edit}" action="#{employeeBean.edit(employee)}"  type="submit"
+                                     class="btn btn-primary" rendered="#{not employee.editable}" />
+                    <h:commandButton value="#{message.delete}" action="#{employeeBean.delete(employee)}" type="submit"
+                                     class="btn btn-danger" rendered="#{not employee.editable}" />
+                </h:column>
+            </h:dataTable>
+            <h:panelGrid columns="4"  rendered="#{employeeBean.showNewEmployeeRow}">
+                <h:inputText value="#{employeeBean.employee.firstname}" class="me-3"/>
+                <h:inputText value="#{employeeBean.employee.lastname}" class="me-3" />
+                <h:inputText value="#{employeeBean.employee.email}" class="me-3"/>
+                <h:inputText value="#{employeeBean.employee.departement}" class="me-3"/>
+            </h:panelGrid>
+            <br/>
 
-        <h:commandButton value="#{message.add}" action="#{employeeBean.toggleNewEmployeeRow}" binding="#{employeeBean.addbutton}" class="btn btn-primary" />
-        <br/><br/>
-        <h:commandButton type="submit" id="saveChangesButtonId" value="#{message.savechanges}"
-                         action="#{employeeBean.saveChanges()}" class="btn btn-primary"
-                         binding="#{employeeBean.savechangesbutton}"/>
 
-        <br/><br/>
-    </h:form>
+            <div>
+                <ul class="pagination">
+                    <li class="page-item active">
+                        <h:commandButton value="#{message.previous}" class="page-link" action="#{employeeBean.previousPage()}" rendered="#{employeeBean.hasPreviousPage()}" />
+                    </li>
+                    <li class="page-item btn-light">
+                        <h:outputText class="page-link" value=" #{message.page} #{employeeBean.currentPage} #{message.of} #{employeeBean.getTotalPages()} " />
+                    </li>
+                    <li class="page-item active">
+                        <h:commandButton value="#{message.next}" class="page-link" action="#{employeeBean.nextPage()}" rendered="#{employeeBean.hasNextPage()}" />
+                    </li>
+                </ul>
+            </div>
 
 
+            <br/>
 
+            <h:commandButton id="addButton" value="#{message.add}" action="#{employeeBean.toggleNewEmployeeRow}" binding="#{employeeBean.addbutton}" class="btn btn-primary" />
+            <br/><br/>
+            <h:commandButton type="submit" id="saveChangesButtonId" value="#{message.savechanges}"
+                             action="#{employeeBean.saveChanges()}" class="btn btn-primary"
+                             binding="#{employeeBean.savechangesbutton}"/>
 
+            <br/><br/>
+        </h:form>
 
-
-    <h:outputStylesheet library="webjars" value="bootstrap/5.3.2/js/bootstrap.js"/>
+        <h:outputStylesheet library="webjars" value="bootstrap/5.3.2/js/bootstrap.js"/>
+    </div>
 </h:body>
 </html>
