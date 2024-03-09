@@ -8,19 +8,23 @@
 
 
 <h:head>
-    <h:outputStylesheet  library="webjars" name="bootstrap/5.3.2/css/bootstrap.css"/>
+    <h:outputStylesheet  library="webjars" name="bootstrap/5.3.3/css/bootstrap.css"/>
     <h:outputStylesheet library="css" name="style.css" />
 </h:head>
 
 <h:body>
     <div class="body">
 
+    <div class="text-center">
         <h:outputText class="h1" value="#{message.title}"/>
-        <br/><br/>
-        <hr/><br/>
-        <h:messages  globalOnly="true"/>
-        <h:form id="employeeForm">
-            <h:dataTable id="employeeTable" var="employee" value="#{employeeBean.displayedEmployees}"  styleClass="table table-striped">
+    </div>
+    <br/><br/>
+    <hr/><br/>
+    <h:messages globalOnly="true"/>
+    <h:form id="employeeForm">
+        <div class="row justify-content-center">
+            <div class="col-auto">
+                <h:dataTable id="employeeTable" var="employee" value="#{employeeBean.displayedEmployees}"  styleClass="table table-striped">
                 <h:column>
                     <f:facet name="header">#{message.fname}</f:facet>
                     <h:inputText value="#{employee.firstname}" rendered="#{employee.editable}" />
@@ -55,43 +59,56 @@
                     <h:commandButton value="#{message.delete}" action="#{employeeBean.delete(employee)}" type="submit"
                                      class="btn btn-danger" rendered="#{not employee.editable}" />
                 </h:column>
+                  
+                  
             </h:dataTable>
-            <h:panelGrid columns="4"  rendered="#{employeeBean.showNewEmployeeRow}">
-                <h:inputText value="#{employeeBean.employee.firstname}" class="me-3"/>
-                <h:inputText value="#{employeeBean.employee.lastname}" class="me-3" />
-                <h:inputText value="#{employeeBean.employee.email}" class="me-3"/>
-                <h:inputText value="#{employeeBean.employee.departement}" class="me-3"/>
-            </h:panelGrid>
-            <br/>
-
-
-            <div>
-                <ul class="pagination">
-                    <li class="page-item active">
-                        <h:commandButton value="#{message.previous}" class="page-link" action="#{employeeBean.previousPage()}" rendered="#{employeeBean.hasPreviousPage()}" />
-                    </li>
-                    <li class="page-item btn-light">
-                        <h:outputText class="page-link" value=" #{message.page} #{employeeBean.currentPage} #{message.of} #{employeeBean.getTotalPages()} " />
-                    </li>
-                    <li class="page-item active">
-                        <h:commandButton value="#{message.next}" class="page-link" action="#{employeeBean.nextPage()}" rendered="#{employeeBean.hasNextPage()}" />
-                    </li>
-                </ul>
             </div>
+        </div>
+      
+      
+         <div class="row justify-content-center">
+              <div class="col-auto">
+                  <h:panelGrid columns="5"  rendered="#{employeeBean.showNewEmployeeRow}">
+                      <h:inputText value="#{employeeBean.employee.firstname}" class="w-20 me-3"/>
+                      <h:inputText value="#{employeeBean.employee.lastname}" class="w-20 me-3" />
+                      <h:inputText value="#{employeeBean.employee.email}" class="w-20 me-3"/>
+                      <h:inputText value="#{employeeBean.employee.departement}" class="w-20 me-3"/>
+                      <h:inputText value="#{employeeBean.employee.birthdate}" class="w-20  me-3">
+                          <f:convertDateTime pattern="yyyy-MM-dd" />
+                      </h:inputText>
+                  </h:panelGrid>
+              </div>
+         </div>
+   
+         <br/>
 
+         <div class="container">
+              <ul class="pagination">
+                  <li class="page-item active">
+                      <h:commandButton value="#{message.previous}" class="page-link" action="#{employeeBean.previousPage()}" rendered="#{employeeBean.hasPreviousPage()}" />
+                  </li>
+                  <li class="page-item btn-light">
+                      <h:outputText class="page-link" value=" #{message.page} #{employeeBean.currentPage} #{message.of} #{employeeBean.getTotalPages()} " />
+                  </li>
+                  <li class="page-item active">
+                      <h:commandButton value="#{message.next}" class="page-link" action="#{employeeBean.nextPage()}" rendered="#{employeeBean.hasNextPage()}" />
+                  </li>
+              </ul>
+         </div>
 
-            <br/>
+        <br/>
 
-            <h:commandButton id="addButton" value="#{message.add}" action="#{employeeBean.toggleNewEmployeeRow}" binding="#{employeeBean.addbutton}" class="btn btn-primary" />
-            <br/><br/>
-            <h:commandButton type="submit" id="saveChangesButtonId" value="#{message.savechanges}"
-                             action="#{employeeBean.saveChanges()}" class="btn btn-primary"
-                             binding="#{employeeBean.savechangesbutton}"/>
+        <h:commandButton id="addButton" value="#{message.add}" action="#{employeeBean.toggleNewEmployeeRow}" binding="#{employeeBean.addbutton}" class="btn btn-primary" />
+        <br/><br/>
+        <h:commandButton type="submit" id="saveChangesButtonId" value="#{message.savechanges}"
+                         action="#{employeeBean.saveChanges()}" class="btn btn-primary"
+                         binding="#{employeeBean.savechangesbutton}"/>
 
-            <br/><br/>
-        </h:form>
+        <br/><br/>
+     </h:form>
 
-        <h:outputStylesheet library="webjars" value="bootstrap/5.3.2/js/bootstrap.js"/>
-    </div>
+  </div>
+    <h:outputStylesheet library="webjars" value="bootstrap/5.3.3/js/bootstrap.js"/>
+      
 </h:body>
 </html>
