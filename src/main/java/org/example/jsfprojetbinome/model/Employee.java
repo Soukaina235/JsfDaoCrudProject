@@ -1,6 +1,8 @@
 package org.example.jsfprojetbinome.model;
 
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Employee {
@@ -29,6 +31,19 @@ public class Employee {
         this.departement = departement;
         this.birthdate = birthdate;
     }
+
+    public Employee(String firstname, String lastname, String email, Departement departement) {
+        this.id = 0;
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.email = email;
+        this.departement = departement;
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+        try {
+            this.birthdate = formatter.parse("2023-11-14");
+        } catch (ParseException e) {
+            e.printStackTrace(); // Gérer l'exception de parsing
+        }    }
 
     public Employee() {
         super();

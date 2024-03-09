@@ -1,0 +1,28 @@
+
+e
+java:S1192l"JDefine a constant instead of duplicating this literal "firstname" 3 times.( ù££øÿÿÿÿ
+e
+java:S1192p"JDefine a constant instead of duplicating this literal "birthdate" 3 times.( ø£Ýÿÿÿÿÿ
+b
+java:S1192o"LDefine a constant instead of duplicating this literal "departement" 3 times.(­„—Ž
+\
+java:S1192n"FDefine a constant instead of duplicating this literal "email" 3 times.(úÁÞ°
+_
+java:S1192m"IDefine a constant instead of duplicating this literal "lastname" 3 times.( â¢½
+j
+java:S2095."OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ƒ»ÊÞûÿÿÿÿ
+k
+java:S2095Â"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ƒ»ÊÞûÿÿÿÿ
+f
+java:S2095â"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ø·“ÿ
+j
+java:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ƒ»ÊÞûÿÿÿÿ
+e
+java:S2095g"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ø·“ÿ
+k
+java:S2095¤"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ƒ»ÊÞûÿÿÿÿ
+f
+java:S2095…"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ø·“ÿ
+]	java:S125?"<This block of commented-out lines of code should be removed.(ÆÿíØûÿÿÿÿ8Ñ¹õ›â1
+>
+java:S1481¿"'Remove this unused "id" local variable.(Ò¯±î

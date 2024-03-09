@@ -24,7 +24,10 @@ public class EmployeeBean {
     private boolean anyEmployeeEditable;
     private Map<Integer, String> emails;
     private Employee employee;
-
+    private boolean showNewEmployeeRow;
+    private List<Employee> displayedEmployees;
+    private int currentPage = 1;
+    private int pageSize = 6;
 
     public EmployeeBean(){
         employeeService = new EmployeeService();
@@ -36,6 +39,7 @@ public class EmployeeBean {
         savechangesbutton = new HtmlCommandButton();
         savechangesbutton.setDisabled(true);
         anyEmployeeEditable = true;
+        showNewEmployeeRow = false;
 
         emails = new HashMap<>();
 
@@ -43,6 +47,38 @@ public class EmployeeBean {
         for (Employee employee : employees) {
             employee.setEditable(false);
         }
+    }
+    
+    public List<Employee> getDisplayedEmployees() {
+        return displayedEmployees;
+    }
+
+    public void setDisplayedEmployees(List<Employee> displayedEmployees) {
+        this.displayedEmployees = displayedEmployees;
+    }
+
+    public int getCurrentPage() {
+        return currentPage;
+    }
+
+    public void setCurrentPage(int currentPage) {
+        this.currentPage = currentPage;
+    }
+
+    public int getPageSize() {
+        return pageSize;
+    }
+
+    public void setPageSize(int pageSize) {
+        this.pageSize = pageSize;
+    }
+
+    public boolean isShowNewEmployeeRow() {
+        return showNewEmployeeRow;
+    }
+
+    public void setShowNewEmployeeRow(boolean showNewEmployeeRow) {
+        this.showNewEmployeeRow = showNewEmployeeRow;
     }
 
     public HtmlCommandButton getDeletebutton() {
@@ -136,25 +172,25 @@ public class EmployeeBean {
 
     }
 
+    public void toggleNewEmployeeRow() {
+        showNewEmployeeRow = !showNewEmployeeRow;
+        savechangesbutton.setDisabled(false);
+        addbutton.setDisabled(true);
+    }
+
     public void saveChanges() {
-
-
-//        for (EmployeeDTO employeeDTO : employees) {
-//            if (employeeDTO.isEditable()) {
-//                employeeService.editService(employeeDTO);
-//                employeeDTO.setEditable(false);
-//
-//                System.out.println("save changes: " + employeeDTO);
-//
-//            }
-//        }
-
         for (Employee employee : employees) {
             if (employee.isEditable()) {
                 employeeService.editService(employee, emails.get(employee.getId()));
                 employee.setEditable(false);
             }
+        }
 
+        if (showNewEmployeeRow) {
+            employeeService.saveService(employee);
+            employees.add(employee);
+            employee = new Employee();
+            showNewEmployeeRow = false;
         }
 
         emails = new HashMap<>();
@@ -164,16 +200,74 @@ public class EmployeeBean {
         savechangesbutton.setDisabled(true);
     }
 
+    //PAGINATION
+    public void loadEmployees() {
+        int startIndex = (currentPage - 1) * pageSize;
+        int endIndex = Math.min(startIndex + pageSize, employees.size());
+        displayedEmployees = employees.subList(startIndex, endIndex);
+    }
+
+    public void nextPage() {
+        if (hasNextPage()) {
+            currentPage++;
+            loadEmployees();
+        }
+    }
+
+    public void previousPage() {
+        if (hasPreviousPage()) {
+            currentPage--;
+            loadEmployees();
+        }
+    }
+
+    public boolean hasNextPage() {
+        return currentPage < getTotalPages();
+    }
+
+    public boolean hasPreviousPage() {
+        return currentPage > 1;
+    }
+
+    public int getTotalPages() {
+        return (int) Math.ceil((double) employees.size() / pageSize);
+    }
 
 //    public void saveChanges() {
-//        String firstname = employee.getFirstname();
-//        String lastname = employee.getLastname();
-//        String email = employee.getEmail();
-//        Departement departementName = employee.getDepartement();
 //
-//        employeeService.saveService(employee);
-//        employees = employeeService.findAllService(); // Met à jour la liste des employés
+//
+////        for (EmployeeDTO employeeDTO : employees) {
+////            if (employeeDTO.isEditable()) {
+////                employeeService.editService(employeeDTO);
+////                employeeDTO.setEditable(false);
+////
+////                System.out.println("save changes: " + employeeDTO);
+////
+////            }
+////        }
+//
+//        for (Employee employee : employees) {
+//            if (employee.isEditable()) {
+//                employeeService.editService(employee, emails.get(employee.getId()));
+//                employee.setEditable(false);
+//            }
+//
+//        }
+//
+//        emails = new HashMap<>();
+//        anyEmployeeEditable = false;
+//
+//        savechangesbutton.setRendered(true);
 //        savechangesbutton.setDisabled(true);
+//    }
+//
+//
+//
+//    public void saveChanges() {
+//        employeeService.saveService(employee);
+//        employees.add(employee);
+//        employee = new Employee();
+//        showNewEmployeeRow = false;
 //    }
 
 }
