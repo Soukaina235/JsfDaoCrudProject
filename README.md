@@ -9,25 +9,39 @@ JEE, JSF, XHTML, CSS, Bootstrap, MySQL
 ## Demo
 
 ### $${\color{lightblue}Home}$$
-![App Screenshot](https://github.com/Soukaina235/JsfDaoCrudProject/blob/main/demo/Accueil.png)
+![App Screenshot](https://github.com/Soukaina235/JsfDaoCrudProject/blob/main/demo/accueil.png)
+
 ![App Screenshot](https://github.com/Soukaina235/JsfDaoCrudProject/blob/main/demo/welcome-page.png)
 
 ### Add an Employee
 
 ![App Screenshot](https://github.com/Soukaina235/JsfDaoCrudProject/blob/main/demo/ajouteremploy%C3%A9.png)
+
 ![App Screenshot](https://github.com/Soukaina235/JsfDaoCrudProject/blob/main/demo/ajoutsucc%C3%A8s.png)
+
+-----------------------------------------------------------------------------------------------------
+
+![App Screenshot](https://github.com/Soukaina235/JsfDaoCrudProject/blob/main/demo/adding-employee.png)
+
+![App Screenshot](https://github.com/Soukaina235/JsfDaoCrudProject/blob/main/demo/adding-employee-success.png)
 
 ### Edit an Employee
 ![App Screenshot](https://github.com/Soukaina235/JsfDaoCrudProject/blob/main/demo/modifieremploy%C3%A9.jpeg)
 
+![App Screenshot](https://github.com/Soukaina235/JsfDaoCrudProject/blob/main/demo/editing-employee.png)
+
 ### Delete an Employee
 ![App Screenshot](https://github.com/Soukaina235/JsfDaoCrudProject/blob/main/demo/supprimeremploy%C3%A9.jpeg)
+
+![App Screenshot](https://github.com/Soukaina235/JsfDaoCrudProject/blob/main/demo/delete-employee-success.png)
 
 ### Search an Employee by FirstName
 ![App Screenshot](https://github.com/Soukaina235/JsfDaoCrudProject/blob/main/demo/recherche.png)
 
 ### Search an Employee by Departement
 ![App Screenshot](https://github.com/Soukaina235/JsfDaoCrudProject/blob/main/demo/recherchepardepartement.png)
+
+![App Screenshot](https://github.com/Soukaina235/JsfDaoCrudProject/blob/main/demo/search-employee.png)
 
 ### Search an Employee by BirthDate
 ![App Screenshot](https://github.com/Soukaina235/JsfDaoCrudProject/blob/main/demo/recherchepardatenaissance.png)
