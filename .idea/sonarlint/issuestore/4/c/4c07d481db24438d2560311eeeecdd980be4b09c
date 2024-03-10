@@ -1,6 +1,5 @@
 
 i
-java:S1192%"LDefine a constant instead of duplicating this literal "i18n.labels" 3 times.(α«8ƒα„¨β1
+java:S1192="LDefine a constant instead of duplicating this literal "i18n.labels" 3 times.(α«8ÒΎβ1
 ~
-java:S1488G"aImmediately return this expression instead of assigning it to the temporary variable "employees".(–’›Ϊ8ƒα„¨β1
-]	java:S1255"<This block of commented-out lines of code should be removed.(„κμ»ψÿÿÿÿ8”α„¨β1
+java:S1488f"aImmediately return this expression instead of assigning it to the temporary variable "employees".(–’›Ϊ8‘ÒΎβ1

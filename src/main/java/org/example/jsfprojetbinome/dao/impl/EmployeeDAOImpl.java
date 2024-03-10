@@ -8,26 +8,18 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+
+/**
+ * Implementation of the EmployeeDAO interface for database operations related to employees.
+ */
 public class EmployeeDAOImpl implements EmployeeDAO {
-    public boolean delete(Employee employee) {
-        ConnectDB db = new ConnectDB();
-        Connection connection = new ConnectDB().getConnection();
-        String sql = "DELETE FROM employee WHERE id=?";
-        boolean result = false;
 
-        try {
-            PreparedStatement statement = connection.prepareStatement(sql);
-            statement.setInt(1, employee.getId());
-
-            result = statement.executeUpdate() > 0;
-        } catch(SQLException e) {
-            e.printStackTrace();
-        }
-        db.closeConnection();
-
-        return result;
-    }
-
+    /**
+     * Saves an employee to the database.
+     *
+     * @param employee The employee to be saved.
+     * @return The number of rows affected by the insert operation.
+     */
     public int save(Employee employee) {
         ConnectDB db = new ConnectDB();
         Connection connection = db.getConnection();
@@ -57,6 +49,39 @@ public class EmployeeDAOImpl implements EmployeeDAO {
         return result;
     }
 
+
+    /**
+     * Deletes an employee from the database.
+     *
+     * @param employee The employee to be deleted.
+     * @return True if the deletion is successful, otherwise false.
+     */
+    public boolean delete(Employee employee) {
+        ConnectDB db = new ConnectDB();
+        Connection connection = new ConnectDB().getConnection();
+        String sql = "DELETE FROM employee WHERE id=?";
+        boolean result = false;
+
+        try {
+            PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setInt(1, employee.getId());
+
+            result = statement.executeUpdate() > 0;
+        } catch(SQLException e) {
+            e.printStackTrace();
+        }
+        db.closeConnection();
+
+        return result;
+    }
+
+
+    /**
+     * Finds an employee by their unique identifier.
+     *
+     * @param id The unique identifier of the employee.
+     * @return The employee object if found, otherwise null.
+     */
     public Employee findById(int id){
         ConnectDB db = new ConnectDB();
         Connection connection;
@@ -87,6 +112,12 @@ public class EmployeeDAOImpl implements EmployeeDAO {
         return employee;
     }
 
+    /**
+     * Finds an employee by their email address.
+     *
+     * @param email The email address of the employee.
+     * @return The employee object if found, otherwise null.
+     */
     public Employee findByEmail(String email){
         ConnectDB db = new ConnectDB();
         Connection connection = new ConnectDB().getConnection();
@@ -118,6 +149,12 @@ public class EmployeeDAOImpl implements EmployeeDAO {
         return employee;
     }
 
+    /**
+     * Updates an existing employee record in the database.
+     *
+     * @param employee The employee object containing updated information.
+     * @return True if the update operation is successful, otherwise false.
+     */
     public boolean edit(Employee employee){
         ConnectDB db = new ConnectDB();
         Connection connection = new ConnectDB().getConnection();
@@ -148,6 +185,11 @@ public class EmployeeDAOImpl implements EmployeeDAO {
     }
 
 
+    /**
+     * Retrieves all employees from the database.
+     *
+     * @return A list of all employees in the database.
+     */
     @Override
     public List<Employee> findAll() {
         ConnectDB db = new ConnectDB();
@@ -177,6 +219,13 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 
         return employees;
     }
+
+    /**
+     * Checks if an email address is unique in the database.
+     *
+     * @param email The email address to be checked.
+     * @return True if the email address is unique, otherwise false.
+     */
     @Override
     public boolean isEmailUnique(String email){
         ConnectDB db = new ConnectDB();

@@ -13,6 +13,8 @@ import java.util.Map;
 @ManagedBean(name="employeeBean")
 @SessionScoped
 public class EmployeeBean {
+
+    // Declaration of class attributes
     private List<Employee> employees ;
     private EmployeeService employeeService;
     private HtmlCommandButton deletebutton;
@@ -31,6 +33,7 @@ public class EmployeeBean {
     private String searchField;
 
 
+    // Constructor of the class
     public EmployeeBean(){
         employeeService = new EmployeeService();
         employee = new Employee();
@@ -55,7 +58,9 @@ public class EmployeeBean {
         pageSize = 6;
         loadEmployees();
     }
-    
+
+    //Getters and Setters of class
+
     public List<Employee> getDisplayedEmployees() {
         return displayedEmployees;
     }
@@ -159,10 +164,16 @@ public class EmployeeBean {
         this.anyEmployeeEditable = anyEmployeeEditable;
     }
 
+
+    // Method to perform the deletion of an employee
+
     public void delete(Employee employee){
         employeeService.deleteService(employee);
         search();
+        loadEmployees();
     }
+
+    // Method to initiate the editing of an employee
     public String edit(Employee employee){
         deletebutton.setRendered(false);
         editbutton.setRendered(false);
@@ -175,12 +186,14 @@ public class EmployeeBean {
         return null;
     }
 
+    // Method to toggle the display of the new employee addition row
     public void toggleNewEmployeeRow() {
         showNewEmployeeRow = !showNewEmployeeRow;
         savechangesbutton.setDisabled(false);
         addbutton.setDisabled(true);
     }
 
+    // Method to save changes made to employees
     public void saveChanges() {
         for (Employee employee : employees) {
             if (employee.isEditable()) {
@@ -207,7 +220,12 @@ public class EmployeeBean {
         savechangesbutton.setDisabled(true);
     }
 
+
+
+
     //PAGINATION
+
+    // Method to load employees based on pagination
     public void loadEmployees() {
         List<Employee> copiedEmployees = new ArrayList<>(employees);
         int startIndex = (currentPage - 1) * pageSize;
@@ -216,6 +234,8 @@ public class EmployeeBean {
     }
 
 
+
+    // Method to move to the next page in pagination
     public void nextPage() {
         if (hasNextPage()) {
             currentPage++;
@@ -223,6 +243,7 @@ public class EmployeeBean {
         }
     }
 
+    // Method to move to the previous page in pagination
     public void previousPage() {
         if (hasPreviousPage()) {
             currentPage--;
@@ -230,30 +251,35 @@ public class EmployeeBean {
         }
     }
 
+    // Method to check if there is a next page in pagination
     public boolean hasNextPage() {
         return currentPage < getTotalPages();
     }
 
+    // Method to check if there is a previous page in pagination
     public boolean hasPreviousPage() {
         return currentPage > 1;
     }
 
+    // Method to calculate the total number of pages for pagination
     public int getTotalPages() {
         return (int) Math.ceil((double) employees.size() / pageSize);
     }
 
-
+    // Method to get the search field value
     public String getSearchField() {
         return searchField;
     }
 
+    // Method to set the search field value
     public void setSearchField(String searchField) {
         this.searchField = searchField;
     }
 
+    // Method to search for employees based on the search field value
     public void search() {
         List<Employee> searchedEmployees = new ArrayList<>();
-        
+
         employees = employeeService.findAllService();
 
         System.out.println("Search field : " + searchField);

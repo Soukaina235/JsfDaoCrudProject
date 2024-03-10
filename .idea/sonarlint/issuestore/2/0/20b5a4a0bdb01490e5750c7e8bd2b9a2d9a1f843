@@ -1,27 +1,25 @@
 
 l
-java:S1192P"JDefine a constant instead of duplicating this literal "firstname" 3 times.( ù££øÿÿÿÿ8¡ý¬¤â1
+java:S1192d"JDefine a constant instead of duplicating this literal "firstname" 3 times.( ù££øÿÿÿÿ8ŸÑÓ¾â1
 l
-java:S1192T"JDefine a constant instead of duplicating this literal "birthdate" 3 times.( ø£Ýÿÿÿÿÿ8¡ý¬¤â1
+java:S1192h"JDefine a constant instead of duplicating this literal "birthdate" 3 times.( ø£Ýÿÿÿÿÿ8¦ÑÓ¾â1
 i
-java:S1192S"LDefine a constant instead of duplicating this literal "departement" 3 times.(­„—Ž8¢ý¬¤â1
+java:S1192g"LDefine a constant instead of duplicating this literal "departement" 3 times.(­„—Ž8¬ÑÓ¾â1
 c
-java:S1192R"FDefine a constant instead of duplicating this literal "email" 3 times.(úÁÞ°8¢ý¬¤â1
+java:S1192f"FDefine a constant instead of duplicating this literal "email" 3 times.(úÁÞ°8³ÑÓ¾â1
 f
-java:S1192Q"IDefine a constant instead of duplicating this literal "lastname" 3 times.( â¢½8¢ý¬¤â1
-l
-java:S2095K"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ø·“ÿ8Ôý¬¤â1
+java:S1192e"IDefine a constant instead of duplicating this literal "lastname" 3 times.( â¢½8ÏÑÓ¾â1
 q
-java:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ƒ»ÊÞûÿÿÿÿ8Ôý¬¤â1
-r
-java:S2095ˆ"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ƒ»ÊÞûÿÿÿÿ8Ôý¬¤â1
+java:S2095""OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ƒ»ÊÞûÿÿÿÿ8Ôý¬¤â1
 q
-java:S2095/"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ƒ»ÊÞûÿÿÿÿ8Ôý¬¤â1
-l
-java:S2095i"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ø·“ÿ8ÞÙ²¤â1
+java:S2095B"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ƒ»ÊÞûÿÿÿÿ8ïÒÓ¾â1
 m
-java:S2095Æ"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ø·“ÿ8Ôý¬¤â1
+java:S2095ƒ"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ø·“ÿ8Ôý¬¤â1
+l
+java:S2095_"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ø·“ÿ8¶ÒÓ¾â1
+m
+java:S2095ð"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ø·“ÿ8ðÒÓ¾â1
 r
-java:S2095¦"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ƒ»ÊÞûÿÿÿÿ8Ôý¬¤â1
-E
-java:S1481£"'Remove this unused "id" local variable.(Ò¯±î8íý¬¤â1
+java:S2095¨"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ƒ»ÊÞûÿÿÿÿ8³ÒÓ¾â1
+r
+java:S2095É"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ƒ»ÊÞûÿÿÿÿ8žè·¿â1
