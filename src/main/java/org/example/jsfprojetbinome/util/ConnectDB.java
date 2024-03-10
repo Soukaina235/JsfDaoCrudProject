@@ -7,11 +7,11 @@ import java.sql.SQLException;
 
 public class ConnectDB {
 
-    private final String databaseUser = "chaymae";
-    private final String databasePassword = "AVNS_A9geXzOZzob0i9OCz71";
+    public Connection conn;private final String databaseUser = "***";
+    private final String databasePassword = "***";
 
-    private final String url = "jdbc:mysql://mysql-337f9109-soukaina-e199.a.aivencloud.com:19094/jsfemployee";
-    public Connection conn;
+    private final String url = "***";
+
 
     public ConnectDB() {
         super();
