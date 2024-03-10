@@ -8,4 +8,4 @@ JEE, JSF, XHTML, CSS, Bootstrap, MySQL
 
 
 ## Demo
-![App Screenshot](https://github.com/Soukaina235/JsfDaoCrudProject/Accueil.png)
+![App Screenshot](https://github.com/Soukaina235/JsfDaoCrudProject/blob/main/Accueil.png)
