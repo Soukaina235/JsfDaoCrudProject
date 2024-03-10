@@ -101,6 +101,7 @@ public class Employee {
                 ", email='" + email + '\'' +
                 ", departement=" + departement +
                 ", birthdate=" + birthdate +
+                ", editable=" + editable +
                 '}';
     }
 }

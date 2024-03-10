@@ -5,11 +5,11 @@ import org.example.jsfprojetbinome.model.Employee;
 import java.util.List;
 
 public interface EmployeeDAO {
-    public int save(Employee employee);
-    public boolean delete(Employee employee);
-    public boolean edit(Employee employee);
-    public List<Employee> findAll();
-    public Employee findById(int id);
-    public Employee findByEmail(String email);
-    public boolean isEmailUnique(String email);
+    int save(Employee employee);
+    boolean delete(Employee employee);
+    boolean edit(Employee employee);
+    List<Employee> findAll();
+    Employee findById(int id);
+    Employee findByEmail(String email);
+    boolean isEmailUnique(String email);
 }

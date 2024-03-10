@@ -18,13 +18,17 @@ public class EmployeeDAOImpl implements EmployeeDAO {
         String sql = "DELETE FROM employee WHERE id=?";
         boolean result = false;
 
+
+        System.out.println(employee);
+        System.out.println(employee.getId());
+
         try {
             PreparedStatement statement = connection.prepareStatement(sql);
 
             statement.setInt(1, employee.getId());
 
             result = statement.executeUpdate() > 0;
-
+            System.out.println("result " + statement.executeUpdate());
         } catch(SQLException e) {
             e.printStackTrace();
         }

@@ -1,5 +1,6 @@
 package org.example.jsfprojetbinome.view;
 
+import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.faces.bean.ManagedBean;
 import jakarta.faces.bean.SessionScoped;
 import jakarta.faces.component.html.HtmlCommandButton;
@@ -29,6 +30,10 @@ public class EmployeeBean {
     private List<Employee> displayedEmployees;
     private int currentPage;
     private int pageSize;
+
+
+    private String searchField;
+
 
     public EmployeeBean(){
         employeeService = new EmployeeService();
@@ -160,7 +165,9 @@ public class EmployeeBean {
 
     public void delete(Employee employee){
         employeeService.deleteService(employee);
-        employees = employeeService.findAllService();
+        search();
+        //employees = employeeService.findAllService();
+        //loadEmployees();
     }
     public String edit(Employee employee){
 
@@ -200,9 +207,10 @@ public class EmployeeBean {
             employee = new Employee();
             showNewEmployeeRow = false;
             addbutton.setDisabled(false);
-            loadEmployees();
         }
 
+        //search();
+        loadEmployees();
 
         emails = new HashMap<>();
         anyEmployeeEditable = false;
@@ -244,6 +252,52 @@ public class EmployeeBean {
 
     public int getTotalPages() {
         return (int) Math.ceil((double) employees.size() / pageSize);
+    }
+
+
+    public String getSearchField() {
+        return searchField;
+    }
+
+    public void setSearchField(String searchField) {
+        this.searchField = searchField;
+    }
+
+    public void search() {
+
+        List<Employee> searchedEmployees = new ArrayList<>();
+        
+        employees = employeeService.findAllService();
+
+        System.out.println("Search field : " + searchField);
+
+        if (searchField != null && !searchField.isEmpty()) {
+            for (Employee employee : employees) {
+                boolean matchFirstName = employee.getFirstname().toLowerCase().contains(searchField.toLowerCase());
+                boolean matchLastName = employee.getLastname().toLowerCase().contains(searchField.toLowerCase());
+                boolean matchEmail = employee.getEmail().toLowerCase().contains(searchField.toLowerCase());
+                boolean matchDepartement = employee.getDepartement().toString().toLowerCase().contains(searchField.toLowerCase());
+                boolean matchBirthdate = employee.getBirthdate().toString().contains(searchField.toLowerCase());
+
+                System.out.println(employee.getBirthdate().toString());
+
+                if ( matchFirstName ||
+                        matchLastName ||
+                        matchEmail ||
+                        matchDepartement ||
+                        matchBirthdate
+                ) {
+                    searchedEmployees.add(employee);
+
+                    System.out.println(employee);
+                }
+
+                employees = new ArrayList<>(searchedEmployees);
+            }
+
+        }
+
+        loadEmployees();
     }
 
 //    public void saveChanges() {
