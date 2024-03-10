@@ -8,4 +8,12 @@ JEE, JSF, XHTML, CSS, Bootstrap, MySQL
 
 
 ## Demo
+
+## French
+
 ![App Screenshot](https://github.com/Soukaina235/JsfDaoCrudProject/blob/main/Accueil.png)
+
+
+## English
+
+![App Screenshot](https://github.com/Soukaina235/JsfDaoCrudProject/blob/main/demo/welcome-page.png)
