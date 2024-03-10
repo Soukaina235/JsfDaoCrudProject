@@ -8,7 +8,7 @@ JEE, JSF, XHTML, CSS, Bootstrap, MySQL
 
 ## Demo
 
-<code style="color : lightskyblue">Home</code>
+### $${\color{lightblue}Home}$$
 ![App Screenshot](https://github.com/Soukaina235/JsfDaoCrudProject/blob/main/demo/Accueil.png)
 ![App Screenshot](https://github.com/Soukaina235/JsfDaoCrudProject/blob/main/demo/welcome-page.png)
 
