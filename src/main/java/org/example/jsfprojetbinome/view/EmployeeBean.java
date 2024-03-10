@@ -1,13 +1,10 @@
 package org.example.jsfprojetbinome.view;
 
-import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.faces.bean.ManagedBean;
 import jakarta.faces.bean.SessionScoped;
 import jakarta.faces.component.html.HtmlCommandButton;
-import org.example.jsfprojetbinome.model.Departement;
 import org.example.jsfprojetbinome.model.Employee;
 import org.example.jsfprojetbinome.service.EmployeeService;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -30,7 +27,6 @@ public class EmployeeBean {
     private List<Employee> displayedEmployees;
     private int currentPage;
     private int pageSize;
-
 
     private String searchField;
 
@@ -166,11 +162,8 @@ public class EmployeeBean {
     public void delete(Employee employee){
         employeeService.deleteService(employee);
         search();
-        //employees = employeeService.findAllService();
-        //loadEmployees();
     }
     public String edit(Employee employee){
-
         deletebutton.setRendered(false);
         editbutton.setRendered(false);
         employee.setEditable(true);
@@ -179,11 +172,7 @@ public class EmployeeBean {
 
         emails.put(employee.getId(), employee.getEmail());
 
-
-//        System.out.println(employee);
-
         return null;
-
     }
 
     public void toggleNewEmployeeRow() {
@@ -209,7 +198,6 @@ public class EmployeeBean {
             addbutton.setDisabled(false);
         }
 
-        //search();
         loadEmployees();
 
         emails = new HashMap<>();
@@ -264,7 +252,6 @@ public class EmployeeBean {
     }
 
     public void search() {
-
         List<Employee> searchedEmployees = new ArrayList<>();
         
         employees = employeeService.findAllService();
@@ -299,42 +286,5 @@ public class EmployeeBean {
 
         loadEmployees();
     }
-
-//    public void saveChanges() {
-//
-//
-////        for (EmployeeDTO employeeDTO : employees) {
-////            if (employeeDTO.isEditable()) {
-////                employeeService.editService(employeeDTO);
-////                employeeDTO.setEditable(false);
-////
-////                System.out.println("save changes: " + employeeDTO);
-////
-////            }
-////        }
-//
-//        for (Employee employee : employees) {
-//            if (employee.isEditable()) {
-//                employeeService.editService(employee, emails.get(employee.getId()));
-//                employee.setEditable(false);
-//            }
-//
-//        }
-//
-//        emails = new HashMap<>();
-//        anyEmployeeEditable = false;
-//
-//        savechangesbutton.setRendered(true);
-//        savechangesbutton.setDisabled(true);
-//    }
-//
-//
-//
-//    public void saveChanges() {
-//        employeeService.saveService(employee);
-//        employees.add(employee);
-//        employee = new Employee();
-//        showNewEmployeeRow = false;
-//    }
 
 }
