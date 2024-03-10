@@ -3,6 +3,8 @@ package org.example.jsfprojetbinome.model;
 import java.util.Date;
 
 public class Employee {
+
+    // Declaration of class attributes
     private int id ;
     private String firstname;
     private String lastname;
@@ -11,6 +13,8 @@ public class Employee {
     private Date birthdate;
     private boolean editable;
 
+
+    // Contructors
     public Employee(int id, String firstname, String lastname, String email, Departement departement, Date birthdate) {
         this.id = id;
         this.firstname = firstname;
@@ -32,6 +36,9 @@ public class Employee {
     public Employee() {
         super();
     }
+
+
+    // Getters and Setters
 
     public int getId() {
         return id;
@@ -89,6 +96,7 @@ public class Employee {
         this.editable = editable;
     }
 
+    // Method toString
     @Override
     public String toString() {
         return "Employee{" +

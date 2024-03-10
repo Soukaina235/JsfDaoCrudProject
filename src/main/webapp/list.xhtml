@@ -18,20 +18,28 @@
         </div>
         <br/><br/>
         <hr/><br/>
-        <div class="container">
-            <h:messages globalOnly="true" infoClass="alert alert-success" errorClass="alert alert-danger" warnClass="alert alert-warning"    style="list-style: none" />
-        </div>
+
             <h:form id="employeeForm">
 
-                <div class="row">
-                    <div class="search-box justify-content-center">
-                        <h:inputText class="form-control me-3 w-25" id="search-input" type="submit" value="#{employeeBean.searchField}" placeholder="First Name" />
-                        <h:commandButton class="btn btn-outline-success" id="search-button" value="#{message.search}" action="#{employeeBean.search}" />
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <div class="search-box">
+                                <div class="input-group mb-3">
+                                    <h:inputText class="form-control me-3" id="search-input" value="#{employeeBean.searchField}" placeholder="First Name" />
+                                    <span class="input-group-btn">
+                                        <h:commandButton class="btn btn-outline-success" id="search-button" value="#{message.search}" action="#{employeeBean.search}" />
+                                    </span>
+                                </div>
+                        </div>
                     </div>
                 </div>
 
+
                 <br/><hr/><br/>
 
+                <div class="container">
+                    <h:messages globalOnly="true" infoClass="alert alert-success" errorClass="alert alert-danger" warnClass="alert alert-warning"    style="list-style: none" />
+                </div>
 
                 <div class="container text-center">
                     <div class="row justify-content-center">
@@ -124,7 +132,7 @@
                 </div>
                 <br/>
                 <div class="row justify-content-start">
-                    <div class="col-12">
+                    <div class="col-6">
                         <h:commandButton id="addButton" value="#{message.add}" action="#{employeeBean.toggleNewEmployeeRow}" binding="#{employeeBean.addbutton}" class="btn btn-primary" style="margin-left:30cm!important;"/>
                     </div>
                 </div>
