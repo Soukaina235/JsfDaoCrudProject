@@ -7,6 +7,7 @@ This project is an Employee Management System developed using JavaServer Faces (
 JEE, JSF, XHTML, CSS, Bootstrap, MySQL 
 
 ## Demo
+
 Home
 ![App Screenshot](https://github.com/Soukaina235/JsfDaoCrudProject/blob/main/demo/Accueil.png)
 Add an Employee
@@ -22,3 +23,4 @@ Search an Employee by Departement
 ![App Screenshot](https://github.com/Soukaina235/JsfDaoCrudProject/blob/main/demo/recherchepardepartement.png)
 Search an Employee by BirthDate
 ![App Screenshot](https://github.com/Soukaina235/JsfDaoCrudProject/blob/main/demo/recherchepardatenaissance.png)
+
