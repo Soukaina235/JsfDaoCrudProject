@@ -8,7 +8,7 @@ JEE, JSF, XHTML, CSS, Bootstrap, MySQL
 
 ## Demo
 
-Home
+<h3>Home</h3>
 ![App Screenshot](https://github.com/Soukaina235/JsfDaoCrudProject/blob/main/demo/Accueil.png)
 
 Add an Employee
