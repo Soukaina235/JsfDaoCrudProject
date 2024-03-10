@@ -7,9 +7,10 @@ import java.sql.SQLException;
 
 public class ConnectDB {
 
-    public Connection conn;private final String databaseUser = "***";
+    public Connection conn;
+    
+    private final String databaseUser = "***";
     private final String databasePassword = "***";
-
     private final String url = "***";
 
 
