@@ -8,7 +8,7 @@ JEE, JSF, XHTML, CSS, Bootstrap, MySQL
 
 ## Demo
 
-### <code style="color : lightskyblue">Home</code>
+<code style="color : lightskyblue">Home</code>
 ![App Screenshot](https://github.com/Soukaina235/JsfDaoCrudProject/blob/main/demo/Accueil.png)
 
 ### Add an Employee
