@@ -12,23 +12,23 @@ JEE, JSF, XHTML, CSS, Bootstrap, MySQL
 ![App Screenshot](https://github.com/Soukaina235/JsfDaoCrudProject/blob/main/demo/Accueil.png)
 ![App Screenshot](https://github.com/Soukaina235/JsfDaoCrudProject/blob/main/demo/welcome-page.png)
 
-### $${\color{lightblue}Add an Employee}$$
+### $${\color{lightblue}Add \space \ an \space \ Employee}$$
 
 ![App Screenshot](https://github.com/Soukaina235/JsfDaoCrudProject/blob/main/demo/ajouteremploy%C3%A9.png)
 ![App Screenshot](https://github.com/Soukaina235/JsfDaoCrudProject/blob/main/demo/ajoutsucc%C3%A8s.png)
 
-### $${\color{lightblue}Edit an Employee}$$
+### $${\color{lightblue}Edit \space \ an \space \ Employee}$$
 ![App Screenshot](https://github.com/Soukaina235/JsfDaoCrudProject/blob/main/demo/modifieremploy%C3%A9.jpeg)
 
-### $${\color{lightblue}Delete an Employee}$$
+### $${\color{lightblue}Delete \space \ an \space \ Employee}$$
 ![App Screenshot](https://github.com/Soukaina235/JsfDaoCrudProject/blob/main/demo/supprimeremploy%C3%A9.jpeg)
 
-### $${\color{lightblue}Search an Employee by FirstName}$$
+### $${\color{lightblue}Search \space \ an \space \ Employee \space \ by \space \ FirstName}$$
 ![App Screenshot](https://github.com/Soukaina235/JsfDaoCrudProject/blob/main/demo/recherche.png)
 
-### $${\color{lightblue}Search an Employee by Departement}$$
+### $${\color{lightblue}Search \space \ an \space \ Employee \space \ by \space \ Departement}$$
 ![App Screenshot](https://github.com/Soukaina235/JsfDaoCrudProject/blob/main/demo/recherchepardepartement.png)
 
-### $${\color{lightblue}Search an Employee by BirthDate}$$
+### $${\color{lightblue}Search \space \ an \space \ Employee \space \ by \space \ BirthDate}$$
 ![App Screenshot](https://github.com/Soukaina235/JsfDaoCrudProject/blob/main/demo/recherchepardatenaissance.png)
 
