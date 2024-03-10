@@ -8,19 +8,19 @@ JEE, JSF, XHTML, CSS, Bootstrap, MySQL
 
 ## Demo
 
-<h3 style="color:#92a8d1;">Home</h3>
+<h3>Home
 ![App Screenshot](https://github.com/Soukaina235/JsfDaoCrudProject/blob/main/demo/Accueil.png)
-<h3 style="color:#92a8d1;">Add an Employee</h3>
+<h3>Add an Employee</h3>
 ![App Screenshot](https://github.com/Soukaina235/JsfDaoCrudProject/blob/main/demo/ajouteremploy%C3%A9.png)
 ![App Screenshot](https://github.com/Soukaina235/JsfDaoCrudProject/blob/main/demo/ajoutsucc%C3%A8s.png)
-<h3 style="color:#92a8d1;">Edit an Employee</h3>
+<h3>Edit an Employee</h3>
 ![App Screenshot](https://github.com/Soukaina235/JsfDaoCrudProject/blob/main/demo/modifieremploy%C3%A9.jpeg)
-<h3 style="color:#92a8d1;">Delete an Employee</h3>
+<h3>Delete an Employee</h3>
 ![App Screenshot](https://github.com/Soukaina235/JsfDaoCrudProject/blob/main/demo/supprimeremploy%C3%A9.jpeg)
-<h3 style="color:#92a8d1;">Search an Employee by FirstName</h3>
+<h3>Search an Employee by FirstName</h3>
 ![App Screenshot](https://github.com/Soukaina235/JsfDaoCrudProject/blob/main/demo/recherche.png)
-<h3 style="color:#92a8d1;">Search an Employee by Departement</h3>
+<h3>Search an Employee by Departement</h3>
 ![App Screenshot](https://github.com/Soukaina235/JsfDaoCrudProject/blob/main/demo/recherchepardepartement.png)
-<h3 style="color:#92a8d1;">Search an Employee by BirthDate</h3>
+<h3>Search an Employee by BirthDate</h3>
 ![App Screenshot](https://github.com/Soukaina235/JsfDaoCrudProject/blob/main/demo/recherchepardatenaissance.png)
 
