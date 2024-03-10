@@ -21,3 +21,7 @@ X
 (src/main/webapp/resources/css/styles.css,4\2\427775e2015b413542fec34801ef44d8d4e22b2c
 v
 Fsrc/main/java/org/example/jsfprojetbinome/service/EmployeeService.java,4\c\4c07d481db24438d2560311eeeecdd980be4b09c
+W
+'src/main/webapp/resources/css/style.css,7\9\793286005b9090bf4b63c9281f5cbde07930695e
+p
+@src/main/java/org/example/jsfprojetbinome/model/Departement.java,5\9\59c0df20fe12d3b8b16e9416270a9620851cb621

@@ -167,12 +167,13 @@ public class EmployeeBean {
         deletebutton.setRendered(false);
         editbutton.setRendered(false);
         employee.setEditable(true);
+        addbutton.setDisabled(true);
         savechangesbutton.setDisabled(false);
 
         emails.put(employee.getId(), employee.getEmail());
 
 
-        System.out.println(employee);
+//        System.out.println(employee);
 
         return null;
 
@@ -189,6 +190,7 @@ public class EmployeeBean {
             if (employee.isEditable()) {
                 employeeService.editService(employee, emails.get(employee.getId()));
                 employee.setEditable(false);
+                addbutton.setDisabled(false);
             }
         }
 
@@ -198,7 +200,9 @@ public class EmployeeBean {
             employee = new Employee();
             showNewEmployeeRow = false;
             addbutton.setDisabled(false);
+            loadEmployees();
         }
+
 
         emails = new HashMap<>();
         anyEmployeeEditable = false;

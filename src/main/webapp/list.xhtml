@@ -13,102 +13,116 @@
 </h:head>
 
 <h:body>
-    <div class="body">
-
-    <div class="text-center">
-        <h:outputText class="h1" value="#{message.title}"/>
-    </div>
-    <br/><br/>
-    <hr/><br/>
-    <h:messages globalOnly="true"/>
-    <h:form id="employeeForm">
-        <div class="row justify-content-center">
-            <div class="col-auto">
-                <h:dataTable id="employeeTable" var="employee" value="#{employeeBean.displayedEmployees}"  styleClass="table table-striped">
-                <h:column>
-                    <f:facet name="header">#{message.fname}</f:facet>
-                    <h:inputText value="#{employee.firstname}" rendered="#{employee.editable}" />
-                    <h:outputText value="#{employee.firstname}" rendered="#{not employee.editable}" />
-                </h:column>
-                <h:column>
-                    <f:facet name="header">#{message.lname}</f:facet>
-                    <h:inputText value="#{employee.lastname}" rendered="#{employee.editable}" />
-                    <h:outputText value="#{employee.lastname}" rendered="#{not employee.editable}" />
-                </h:column>
-                <h:column>
-                    <f:facet name="header">#{message.email}</f:facet>
-                    <h:inputText value="#{employee.email}" rendered="#{employee.editable}" />
-                    <h:outputText value="#{employee.email}" rendered="#{not employee.editable}" />
-                </h:column>
-                <h:column>
-                    <f:facet name="header">#{message.departement}</f:facet>
-                    <h:inputText value="#{employee.departement}" rendered="#{employee.editable}" />
-                    <h:outputText value="#{employee.departement}" rendered="#{not employee.editable}" />
-                </h:column>
-                <h:column>
-                    <f:facet name="header">#{message.birthdate}</f:facet>
-                    <h:inputText value="#{employee.birthdate}" rendered="#{employee.editable}" converterId="customDateConverter">
-                        <f:convertDateTime pattern="yyyy-MM-dd" />
-                    </h:inputText>
-                    <h:outputText value="#{employee.birthdate}" rendered="#{not employee.editable}" />
-                </h:column>
-                <h:column>
-                    <f:facet name="header">#{message.actions}</f:facet>
-                    <h:commandButton value="#{message.edit}" action="#{employeeBean.edit(employee)}"  type="submit"
-                                     class="btn btn-primary" rendered="#{not employee.editable}" />
-                    <h:commandButton value="#{message.delete}" action="#{employeeBean.delete(employee)}" type="submit"
-                                     class="btn btn-danger" rendered="#{not employee.editable}" />
-                </h:column>
-                  
-                  
-            </h:dataTable>
-            </div>
+    <div class="container-fluid">
+        <div class="text-center mt-5">
+            <h:outputText class="h1" value="#{message.title}"/>
         </div>
-      
-      
-         <div class="row justify-content-center">
-              <div class="col-auto">
-                  <h:panelGrid columns="5"  rendered="#{employeeBean.showNewEmployeeRow}">
-                      <h:inputText value="#{employeeBean.employee.firstname}" class="w-20 me-3"/>
-                      <h:inputText value="#{employeeBean.employee.lastname}" class="w-20 me-3" />
-                      <h:inputText value="#{employeeBean.employee.email}" class="w-20 me-3"/>
-                      <h:inputText value="#{employeeBean.employee.departement}" class="w-20 me-3"/>
-                      <h:inputText value="#{employeeBean.employee.birthdate}" class="w-20  me-3">
-                          <f:convertDateTime pattern="yyyy-MM-dd" />
-                      </h:inputText>
-                  </h:panelGrid>
-              </div>
-         </div>
-   
-         <br/>
-
-         <div class="container">
-              <ul class="pagination">
-                  <li class="page-item active">
-                      <h:commandButton value="#{message.previous}" class="page-link" action="#{employeeBean.previousPage()}" rendered="#{employeeBean.hasPreviousPage()}" />
-                  </li>
-                  <li class="page-item btn-light">
-                      <h:outputText class="page-link" value=" #{message.page} #{employeeBean.currentPage} #{message.of} #{employeeBean.getTotalPages()} " />
-                  </li>
-                  <li class="page-item active">
-                      <h:commandButton value="#{message.next}" class="page-link" action="#{employeeBean.nextPage()}" rendered="#{employeeBean.hasNextPage()}" />
-                  </li>
-              </ul>
-         </div>
-
-        <br/>
-
-        <h:commandButton id="addButton" value="#{message.add}" action="#{employeeBean.toggleNewEmployeeRow}" binding="#{employeeBean.addbutton}" class="btn btn-primary" />
         <br/><br/>
-        <h:commandButton type="submit" id="saveChangesButtonId" value="#{message.savechanges}"
-                         action="#{employeeBean.saveChanges()}" class="btn btn-primary"
-                         binding="#{employeeBean.savechangesbutton}"/>
+        <hr/><br/>
+        <div class="container">
+            <h:messages globalOnly="true" infoClass="alert alert-success" errorClass="alert alert-danger" warnClass="alert alert-warning"    style="list-style: none" />
+        </div>
+            <h:form id="employeeForm">
+                <div class="container text-center">
+                    <div class="row justify-content-center">
+                        <div class="col-12 border border-primary rounded p-3">
+                            <h:dataTable id="employeeTable" var="employee" value="#{employeeBean.displayedEmployees}"  styleClass="table table-striped" style="width:100%!important;">
+                                            <h:column class="w-25">
+                                            <f:facet  name="header">#{message.fname}</f:facet>
+                                            <h:inputText value="#{employee.firstname}"  class="form-control"  rendered="#{employee.editable}" />
+                                            <h:outputText value="#{employee.firstname}" rendered="#{not employee.editable}" />
+                                        </h:column>
+                                        <h:column class="w-25">
+                                            <f:facet  name="header">#{message.lname}</f:facet>
+                                            <h:inputText class="form-control"  value="#{employee.lastname}" rendered="#{employee.editable}" />
+                                            <h:outputText value="#{employee.lastname}" rendered="#{not employee.editable}" />
+                                        </h:column>
+                                        <h:column class="w-25">
+                                            <f:facet  name="header">#{message.email}</f:facet>
+                                            <h:inputText class="form-control"  value="#{employee.email}" rendered="#{employee.editable}" />
+                                            <h:outputText value="#{employee.email}" rendered="#{not employee.editable}" />
+                                        </h:column>
+                                        <h:column class="w-15">
+                                            <f:facet  name="header">#{message.departement}</f:facet>
+                                            <h:selectOneMenu  value="#{employee.departement}" rendered="#{employee.editable}"  class="form-select" style="margin-right: 2cm; margin-left: 1cm;">
+                                                <f:selectItem itemLabel="#{message.select}" itemValue="" />
+                                                <f:selectItem itemLabel="IT" itemValue="IT" />
+                                                <f:selectItem itemLabel="HR" itemValue="HR" />
+                                                <f:selectItem itemLabel="FINANCE" itemValue="FINANCE" />
+                                                <f:selectItem itemLabel="MARKETING" itemValue="MARKETING" />
+                                            </h:selectOneMenu>
+                                            <h:outputText value="#{employee.departement}" rendered="#{not employee.editable}" />
+                                        </h:column>
+                                        <h:column class="w-25">
+                                            <f:facet name="header">#{message.birthdate}</f:facet>
+                                            <h:inputText  class="form-control" value="#{employee.birthdate}" rendered="#{employee.editable}" converterId="customDateConverter">
+                                                <f:convertDateTime pattern="yyyy-MM-dd" />
+                                            </h:inputText>
+                                            <h:outputText value="#{employee.birthdate}" rendered="#{not employee.editable}">
+                                                <f:convertDateTime pattern="yyyy-MM-dd" />
+                                            </h:outputText>
+                                        </h:column>
+                                        <h:column class="w-25">
+                                            <f:facet  name="header">#{message.actions}</f:facet>
+                                            <h:commandButton value="#{message.edit}" action="#{employeeBean.edit(employee)}"  type="submit"
+                                                             class="btn btn-primary text-center" rendered="#{not employee.editable}" style="margin-bottom:10px;" />
+                                            <h:commandButton value="#{message.delete}" action="#{employeeBean.delete(employee)}" type="submit"
+                                                             class="btn btn-danger text-center" rendered="#{not employee.editable}" />
+                                        </h:column>
+                            </h:dataTable>
+                            <div class="row justify-content-center">
+                                <h:panelGroup layout="block" class="col-12" rendered="#{employeeBean.showNewEmployeeRow}">
+                                    <h:panelGrid columns="5"  rendered="#{employeeBean.showNewEmployeeRow}">
+                                        <h:inputText value="#{employeeBean.employee.firstname}" class="form-control" style="margin-right: 17px;"/>
+                                        <h:inputText value="#{employeeBean.employee.lastname}" class="form-control" style="margin-right: 17px;" />
+                                        <h:inputText value="#{employeeBean.employee.email}" class="form-control" style="margin-right: 17px;"/>
+                                        <h:selectOneMenu value="#{employeeBean.employee.departement}" class="form-select" style="margin-right: 6px;">
+                                            <f:selectItem itemLabel="#{message.select}" itemValue="" />
+                                            <f:selectItem itemLabel="IT" itemValue="IT" />
+                                            <f:selectItem itemLabel="HR" itemValue="HR" />
+                                            <f:selectItem itemLabel="FINANCE" itemValue="FINANCE" />
+                                            <f:selectItem itemLabel="MARKETING" itemValue="MARKETING" />
+                                        </h:selectOneMenu>
+                                        <h:inputText value="#{employeeBean.employee.birthdate}" class="form-control" style="width:50%;">
+                                            <f:convertDateTime pattern="yyyy-MM-dd" />
+                                        </h:inputText>
+                                    </h:panelGrid>
+                                </h:panelGroup>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br/>
+                <div class="row justify-content-center">
+                    <div class="col-14">
+                        <ul class="pagination justify-content-center">
+                                      <li class="page-item active">
+                                          <h:commandButton value="#{message.previous}" class="page-link" action="#{employeeBean.previousPage()}" rendered="#{employeeBean.hasPreviousPage()}" />
+                                      </li>
+                                      <li class="page-item btn-light">
+                                          <h:outputText class="page-link" value=" #{message.page} #{employeeBean.currentPage} #{message.of} #{employeeBean.getTotalPages()} " />
+                                      </li>
+                                      <li class="page-item active">
+                                          <h:commandButton value="#{message.next}" class="page-link" action="#{employeeBean.nextPage()}" rendered="#{employeeBean.hasNextPage()}" />
+                                      </li>
+                        </ul>
+                    </div>
+                </div>
+                <br/>
+                <div class="row justify-content-start">
+                    <div class="col-12">
+                        <h:commandButton id="addButton" value="#{message.add}" action="#{employeeBean.toggleNewEmployeeRow}" binding="#{employeeBean.addbutton}" class="btn btn-primary" style="margin-left:30cm!important;"/>
+                    </div>
+                </div>
 
-        <br/><br/>
-     </h:form>
+                <br/><br/>
+                <h:commandButton type="submit" id="saveChangesButtonId" value="#{message.savechanges}"
+                                 action="#{employeeBean.saveChanges()}" class="btn btn-success"
+                                 binding="#{employeeBean.savechangesbutton}"/>
 
-  </div>
-    <h:outputStylesheet library="webjars" value="bootstrap/5.3.3/js/bootstrap.js"/>
-      
-</h:body>
+                <br/><br/>
+            </h:form>
+        </div>
+        <h:outputStylesheet library="webjars" value="bootstrap/5.3.3/js/bootstrap.js"/>
+    </h:body>
 </html>
