@@ -12,23 +12,23 @@ JEE, JSF, XHTML, CSS, Bootstrap, MySQL
 ![App Screenshot](https://github.com/Soukaina235/JsfDaoCrudProject/blob/main/demo/Accueil.png)
 ![App Screenshot](https://github.com/Soukaina235/JsfDaoCrudProject/blob/main/demo/welcome-page.png)
 
-### Add an Employee
+### $${\color{lightblue}Add an Employee}$$
 
 ![App Screenshot](https://github.com/Soukaina235/JsfDaoCrudProject/blob/main/demo/ajouteremploy%C3%A9.png)
 ![App Screenshot](https://github.com/Soukaina235/JsfDaoCrudProject/blob/main/demo/ajoutsucc%C3%A8s.png)
 
-### Edit an Employee
+### $${\color{lightblue}Edit an Employee}$$
 ![App Screenshot](https://github.com/Soukaina235/JsfDaoCrudProject/blob/main/demo/modifieremploy%C3%A9.jpeg)
 
-### Delete an Employee
+### $${\color{lightblue}Delete an Employee}$$
 ![App Screenshot](https://github.com/Soukaina235/JsfDaoCrudProject/blob/main/demo/supprimeremploy%C3%A9.jpeg)
 
-### Search an Employee by FirstName
+### $${\color{lightblue}Search an Employee by FirstName}$$
 ![App Screenshot](https://github.com/Soukaina235/JsfDaoCrudProject/blob/main/demo/recherche.png)
 
-### Search an Employee by Departement
+### $${\color{lightblue}Search an Employee by Departement}$$
 ![App Screenshot](https://github.com/Soukaina235/JsfDaoCrudProject/blob/main/demo/recherchepardepartement.png)
 
-### Search an Employee by BirthDate
+### $${\color{lightblue}Search an Employee by BirthDate}$$
 ![App Screenshot](https://github.com/Soukaina235/JsfDaoCrudProject/blob/main/demo/recherchepardatenaissance.png)
 
