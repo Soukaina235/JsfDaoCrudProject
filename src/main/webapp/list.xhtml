@@ -3,7 +3,6 @@
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 
 
@@ -98,9 +97,7 @@
                                         </h:selectOneMenu>
                                         <h:inputText id="birthdateAdd" value="#{employeeBean.employee.birthdate}" class="form-control" style="width:50%;">
                                             <f:convertDateTime pattern="yyyy-MM-dd" />
-                                            <f:validateRegex pattern="\d{4}-\d{2}-\d{2}"
-                                                             message="#{message.dateValidatorMessage}"
-                                            />
+                                            <f:validator validatorId="dateValidator" />
                                         </h:inputText>
                                         <h:message for="birthdateAdd" style = "color:red" />
                                     </h:panelGrid>
@@ -113,15 +110,15 @@
                 <div class="row justify-content-center">
                     <div class="col-14">
                         <ul class="pagination justify-content-center">
-                                      <li class="page-item active">
-                                          <h:commandButton value="#{message.previous}" class="page-link" action="#{employeeBean.previousPage()}" rendered="#{employeeBean.hasPreviousPage()}" />
-                                      </li>
-                                      <li class="page-item btn-light">
-                                          <h:outputText class="page-link" value=" #{message.page} #{employeeBean.currentPage} #{message.of} #{employeeBean.getTotalPages()} " />
-                                      </li>
-                                      <li class="page-item active">
-                                          <h:commandButton value="#{message.next}" class="page-link" action="#{employeeBean.nextPage()}" rendered="#{employeeBean.hasNextPage()}" />
-                                      </li>
+                              <li class="page-item active">
+                                  <h:commandButton value="#{message.previous}" class="page-link" action="#{employeeBean.previousPage()}" rendered="#{employeeBean.hasPreviousPage()}" />
+                              </li>
+                              <li class="page-item btn-light">
+                                  <h:outputText class="page-link" value=" #{message.page} #{employeeBean.currentPage} #{message.of} #{employeeBean.getTotalPages()} " />
+                              </li>
+                              <li class="page-item active">
+                                  <h:commandButton value="#{message.next}" class="page-link" action="#{employeeBean.nextPage()}" rendered="#{employeeBean.hasNextPage()}" />
+                              </li>
                         </ul>
                     </div>
                 </div>

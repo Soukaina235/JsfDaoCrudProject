@@ -5,7 +5,6 @@ import jakarta.faces.context.FacesContext;
 import org.example.jsfprojetbinome.dao.EmployeeDAO;
 import org.example.jsfprojetbinome.dao.impl.EmployeeDAOImpl;
 import org.example.jsfprojetbinome.model.Employee;
-
 import java.util.List;
 import java.util.Objects;
 import java.util.ResourceBundle;
@@ -32,6 +31,7 @@ public class EmployeeService {
         FacesContext.getCurrentInstance().addMessage(null,
                 new FacesMessage(FacesMessage.SEVERITY_INFO, message, null));
     }
+
     public void saveService(Employee employee) {
         boolean isUnique = employeeDAO.isEmailUnique(employee.getEmail());
         ResourceBundle bundle = ResourceBundle.getBundle("i18n.labels");
@@ -50,8 +50,6 @@ public class EmployeeService {
 
     public void editService(Employee employee, String email) {
         boolean isunique = employeeDAO.isEmailUnique(employee.getEmail()) || Objects.equals(employee.getEmail(), email);
-        //boolean isunique = true;
-        //boolean isunique = employeeDAO.isEmailUnique(employee.getEmail());
 
         ResourceBundle bundle = ResourceBundle.getBundle("i18n.labels");
 
@@ -82,7 +80,5 @@ public class EmployeeService {
             addErrorMessage(bundle.getString("employee.delete.failed"));
         }
     }
-
-
 
 }

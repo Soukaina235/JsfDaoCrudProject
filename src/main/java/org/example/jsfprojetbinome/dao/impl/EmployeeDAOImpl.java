@@ -4,31 +4,22 @@ import org.example.jsfprojetbinome.dao.EmployeeDAO;
 import org.example.jsfprojetbinome.model.Departement;
 import org.example.jsfprojetbinome.model.Employee;
 import org.example.jsfprojetbinome.util.ConnectDB;
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class EmployeeDAOImpl implements EmployeeDAO {
-    // internationalization + input, edit, delete activate desactivate....
-
     public boolean delete(Employee employee) {
         ConnectDB db = new ConnectDB();
         Connection connection = new ConnectDB().getConnection();
         String sql = "DELETE FROM employee WHERE id=?";
         boolean result = false;
 
-
-        System.out.println(employee);
-        System.out.println(employee.getId());
-
         try {
             PreparedStatement statement = connection.prepareStatement(sql);
-
             statement.setInt(1, employee.getId());
 
             result = statement.executeUpdate() > 0;
-            System.out.println("result " + statement.executeUpdate());
         } catch(SQLException e) {
             e.printStackTrace();
         }
@@ -163,8 +154,6 @@ public class EmployeeDAOImpl implements EmployeeDAO {
         Connection connection = new ConnectDB().getConnection();
         String sql = "SELECT * FROM employee";
         List<Employee> employees = new ArrayList<>();
-
-        int id  = -1;
 
         try {
             PreparedStatement statement = connection.prepareStatement(sql);
