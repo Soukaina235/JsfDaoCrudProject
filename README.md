@@ -8,26 +8,26 @@ JEE, JSF, XHTML, CSS, Bootstrap, MySQL
 
 ## Demo
 
-Home
+### Home
 ![App Screenshot](https://github.com/Soukaina235/JsfDaoCrudProject/blob/main/demo/Accueil.png)
 
-Add an Employee
+### Add an Employee
 
 ![App Screenshot](https://github.com/Soukaina235/JsfDaoCrudProject/blob/main/demo/ajouteremploy%C3%A9.png)
 ![App Screenshot](https://github.com/Soukaina235/JsfDaoCrudProject/blob/main/demo/ajoutsucc%C3%A8s.png)
 
-Edit an Employee
+### Edit an Employee
 ![App Screenshot](https://github.com/Soukaina235/JsfDaoCrudProject/blob/main/demo/modifieremploy%C3%A9.jpeg)
 
-Delete an Employee
+### Delete an Employee
 ![App Screenshot](https://github.com/Soukaina235/JsfDaoCrudProject/blob/main/demo/supprimeremploy%C3%A9.jpeg)
 
-Search an Employee by FirstName
+### Search an Employee by FirstName
 ![App Screenshot](https://github.com/Soukaina235/JsfDaoCrudProject/blob/main/demo/recherche.png)
 
-Search an Employee by Departement
+### Search an Employee by Departement
 ![App Screenshot](https://github.com/Soukaina235/JsfDaoCrudProject/blob/main/demo/recherchepardepartement.png)
 
-Search an Employee by BirthDate
+### Search an Employee by BirthDate
 ![App Screenshot](https://github.com/Soukaina235/JsfDaoCrudProject/blob/main/demo/recherchepardatenaissance.png)
 
