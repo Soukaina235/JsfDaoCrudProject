@@ -10,6 +10,7 @@ JEE, JSF, XHTML, CSS, Bootstrap, MySQL
 
 <code style="color : lightskyblue">Home</code>
 ![App Screenshot](https://github.com/Soukaina235/JsfDaoCrudProject/blob/main/demo/Accueil.png)
+![App Screenshot](https://github.com/Soukaina235/JsfDaoCrudProject/blob/main/demo/welcome-page.png)
 
 ### Add an Employee
 
