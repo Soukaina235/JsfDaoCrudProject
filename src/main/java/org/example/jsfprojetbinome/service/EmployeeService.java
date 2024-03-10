@@ -13,27 +13,39 @@ import java.util.ResourceBundle;
 public class EmployeeService {
     EmployeeDAO employeeDAO;
 
+
     public EmployeeService(){
         this.employeeDAO = new EmployeeDAOImpl();
     }
 
-    public void saveService(Employee employee){
-        boolean isunique = employeeDAO.isEmailUnique(employee.getEmail());
-        FacesMessage msg;
 
+    private void addErrorMessage(String message) {
+        FacesContext.getCurrentInstance().addMessage(null,
+                new FacesMessage(FacesMessage.SEVERITY_ERROR, message, null));
+    }
+
+    private void addWarningMessage(String message) {
+        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_WARN, message, null));
+    }
+
+    private void addSuccessMessage(String message) {
+        FacesContext.getCurrentInstance().addMessage(null,
+                new FacesMessage(FacesMessage.SEVERITY_INFO, message, null));
+    }
+    public void saveService(Employee employee) {
+        boolean isUnique = employeeDAO.isEmailUnique(employee.getEmail());
         ResourceBundle bundle = ResourceBundle.getBundle("i18n.labels");
 
-        if(isunique) {
+        if (isUnique) {
             int result = employeeDAO.save(employee);
-            if(result > 0){
-                msg = new FacesMessage(FacesMessage.SEVERITY_INFO, bundle.getString("employee.save"),null);
+            if (result > 0) {
+                addSuccessMessage(bundle.getString("employee.save"));
             } else {
-                msg = new FacesMessage(FacesMessage.SEVERITY_ERROR, bundle.getString("employee.SaveFailed"),null);
+                addErrorMessage(bundle.getString("employee.SaveFailed"));
             }
-        }else {
-            msg = new FacesMessage(FacesMessage.SEVERITY_ERROR, bundle.getString("employee.Emailexist"),null);
+        } else {
+            addWarningMessage(bundle.getString("employee.Emailexist"));
         }
-        FacesContext.getCurrentInstance().addMessage(null, msg);
     }
 
     public void editService(Employee employee, String email) {
@@ -42,21 +54,17 @@ public class EmployeeService {
         //boolean isunique = employeeDAO.isEmailUnique(employee.getEmail());
 
         ResourceBundle bundle = ResourceBundle.getBundle("i18n.labels");
-        FacesMessage msg;
 
         if(isunique) {
             boolean result = employeeDAO.edit(employee);
             if (result) {
-                msg = new FacesMessage(FacesMessage.SEVERITY_INFO, bundle.getString("employee.edit"), null);
-
+                addSuccessMessage(bundle.getString("employee.edit"));
             } else {
-                msg = new FacesMessage(FacesMessage.SEVERITY_ERROR, bundle.getString("employee.edit.failed"), null);
+                addErrorMessage(bundle.getString("employee.edit.failed"));
             }
         }else {
-            msg = new FacesMessage(FacesMessage.SEVERITY_ERROR, bundle.getString("employee.Emailexist"),null);
+            addWarningMessage(bundle.getString("employee.Emailexist"));
         }
-
-        FacesContext.getCurrentInstance().addMessage(null, msg);
     }
 
     public List<Employee> findAllService(){
@@ -67,15 +75,14 @@ public class EmployeeService {
     public void deleteService(Employee employee) {
         boolean result = employeeDAO.delete(employee);
         ResourceBundle bundle = ResourceBundle.getBundle("i18n.labels");
-        FacesMessage msg;
 
         if (result) {
-            msg = new FacesMessage(FacesMessage.SEVERITY_INFO, bundle.getString("employee.delete"), null);
-
+            addSuccessMessage(bundle.getString("employee.delete"));
         } else {
-            msg = new FacesMessage(FacesMessage.SEVERITY_ERROR, bundle.getString("employee.delete.failed"), null);
+            addErrorMessage(bundle.getString("employee.delete.failed"));
         }
-
-        FacesContext.getCurrentInstance().addMessage(null, msg);
     }
+
+
+
 }

@@ -1,4 +1,19 @@
 .body {
-    width: 70%;
+    width: 100%;
     margin: auto;
+}
+
+.custom-table {
+    width : 100%;
+}
+
+.employeeTableColumn {
+ width: 25%;
+}
+.alert li {
+    list-style: none;
+}
+
+.custom-width-1 {
+    width: 10%;
 }
