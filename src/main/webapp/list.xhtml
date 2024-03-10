@@ -23,6 +23,17 @@
             <h:messages globalOnly="true" infoClass="alert alert-success" errorClass="alert alert-danger" warnClass="alert alert-warning"    style="list-style: none" />
         </div>
             <h:form id="employeeForm">
+
+                <div class="row">
+                    <div class="search-box justify-content-center">
+                        <h:inputText class="form-control me-3 w-25" id="search-input" type="submit" value="#{employeeBean.searchField}" placeholder="First Name" />
+                        <h:commandButton class="btn btn-outline-success" id="search-button" value="#{message.search}" action="#{employeeBean.search}" />
+                    </div>
+                </div>
+
+                <br/><hr/><br/>
+
+
                 <div class="container text-center">
                     <div class="row justify-content-center">
                         <div class="col-12 border border-primary rounded p-3">
@@ -55,9 +66,11 @@
                                         </h:column>
                                         <h:column class="w-25">
                                             <f:facet name="header">#{message.birthdate}</f:facet>
-                                            <h:inputText  class="form-control" value="#{employee.birthdate}" rendered="#{employee.editable}" converterId="customDateConverter">
+                                            <h:inputText id="birthdateEdit" class="form-control" value="#{employee.birthdate}" rendered="#{employee.editable}">
                                                 <f:convertDateTime pattern="yyyy-MM-dd" />
+                                                <f:validator validatorId="dateValidator" />
                                             </h:inputText>
+                                            <h:message for="birthdateEdit" style = "color:red" />
                                             <h:outputText value="#{employee.birthdate}" rendered="#{not employee.editable}">
                                                 <f:convertDateTime pattern="yyyy-MM-dd" />
                                             </h:outputText>
@@ -83,9 +96,13 @@
                                             <f:selectItem itemLabel="FINANCE" itemValue="FINANCE" />
                                             <f:selectItem itemLabel="MARKETING" itemValue="MARKETING" />
                                         </h:selectOneMenu>
-                                        <h:inputText value="#{employeeBean.employee.birthdate}" class="form-control" style="width:50%;">
+                                        <h:inputText id="birthdateAdd" value="#{employeeBean.employee.birthdate}" class="form-control" style="width:50%;">
                                             <f:convertDateTime pattern="yyyy-MM-dd" />
+                                            <f:validateRegex pattern="\d{4}-\d{2}-\d{2}"
+                                                             message="#{message.dateValidatorMessage}"
+                                            />
                                         </h:inputText>
+                                        <h:message for="birthdateAdd" style = "color:red" />
                                     </h:panelGrid>
                                 </h:panelGroup>
                             </div>
